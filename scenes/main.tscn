@@ -1,16 +1,16 @@
 [gd_scene load_steps=17 format=3 uid="uid://dcaxmy6pw8dgm"]
 
-[ext_resource type="Script" path="res://scripts/main.gd" id="1_o4fj4"]
+[ext_resource type="Script" uid="uid://bo1jx5wfoknhy" path="res://scripts/main.gd" id="1_o4fj4"]
 [ext_resource type="Texture2D" uid="uid://c5ibnc62ph31m" path="res://assets/ViagemDeNoe/quarto.png" id="2_uivf1"]
 [ext_resource type="Texture2D" uid="uid://n6yf1upphsfy" path="res://assets/ViagemDeNoe/chest_neutral.png" id="4_cdxpy"]
-[ext_resource type="Script" path="res://scripts/chest.gd" id="4_s78rg"]
+[ext_resource type="Script" uid="uid://cvljm1pny0o5t" path="res://scripts/chest.gd" id="4_s78rg"]
 [ext_resource type="Texture2D" uid="uid://ccugmxvqr4g4h" path="res://assets/ViagemDeNoe/mirror_neutral.png" id="5_km7dp"]
-[ext_resource type="Script" path="res://scripts/window.gd" id="6_5wnnr"]
+[ext_resource type="Script" uid="uid://17wuixsegr3c" path="res://scripts/window.gd" id="6_5wnnr"]
 [ext_resource type="Texture2D" uid="uid://b2redrxsj7bhy" path="res://assets/ViagemDeNoe/window_neutral.png" id="7_x3nk2"]
-[ext_resource type="Script" path="res://scripts/mirror.gd" id="8_1lbtk"]
+[ext_resource type="Script" uid="uid://cwva244abiopj" path="res://scripts/mirror.gd" id="8_1lbtk"]
 [ext_resource type="PackedScene" uid="uid://b81xyootrnoab" path="res://scenes/player.tscn" id="9_85g3d"]
-[ext_resource type="Script" path="res://scripts/estante.gd" id="9_utva2"]
-[ext_resource type="Script" path="res://scripts/cama.gd" id="10_pmn80"]
+[ext_resource type="Script" uid="uid://cfki7ao13n7py" path="res://scripts/estante.gd" id="9_utva2"]
+[ext_resource type="Script" uid="uid://bl7w5rf0a77jb" path="res://scripts/cama.gd" id="10_pmn80"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ao8pf"]
 size = Vector2(7129.99, 1791.16)

@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://b3y1jg7nquc4c"]
 
-[ext_resource type="Script" path="res://scripts/chest_level.gd" id="1_piyfw"]
+[ext_resource type="Script" uid="uid://lyaqloqdmptr" path="res://scripts/chest_level.gd" id="1_piyfw"]
 [ext_resource type="PackedScene" uid="uid://b81xyootrnoab" path="res://scenes/player.tscn" id="2_jw22o"]
-[ext_resource type="Script" path="res://scripts/chest_trigger.gd" id="3_bl6iv"]
+[ext_resource type="Script" uid="uid://dgjsi4whvyfqn" path="res://scripts/chest_trigger.gd" id="3_bl6iv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8bkjd"]
 size = Vector2(101, 80)
