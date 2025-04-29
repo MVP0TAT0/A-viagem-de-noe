@@ -1,0 +1,20 @@
+[gd_scene load_steps=2 format=3 uid="uid://covvdlj2ye7vo"]
+
+[ext_resource type="Script" path="res://scripts/level.gd" id="1_jdh04"]
+
+[node name="level" type="Node2D"]
+script = ExtResource("1_jdh04")
+
+[node name="GoodChoiceButton" type="Button" parent="."]
+offset_left = 766.0
+offset_top = 483.0
+offset_right = 1006.0
+offset_bottom = 588.0
+text = "Good  choice"
+
+[node name="BadChoiceButton" type="Button" parent="."]
+offset_left = 1115.0
+offset_top = 480.0
+offset_right = 1340.0
+offset_bottom = 585.0
+text = "Bad choice"

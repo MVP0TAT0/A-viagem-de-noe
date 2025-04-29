@@ -1,0 +1,36 @@
+[gd_scene load_steps=6 format=3 uid="uid://biwmjxotk80hl"]
+
+[ext_resource type="Script" path="res://scripts/mirror_level.gd" id="1_38sln"]
+[ext_resource type="PackedScene" uid="uid://b81xyootrnoab" path="res://scenes/player.tscn" id="2_c58s0"]
+[ext_resource type="Texture2D" uid="uid://bsb6olxhasrtt" path="res://assets/ViagemDeNoe/mirror.png" id="2_odwg4"]
+[ext_resource type="Script" path="res://scripts/mirror_trigger.gd" id="4_c0seu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a0b0r"]
+size = Vector2(101, 80)
+
+[node name="MirrorLevel" type="Node2D"]
+script = ExtResource("1_38sln")
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(1967, 539)
+scale = Vector2(0.705, 0.705)
+texture = ExtResource("2_odwg4")
+
+[node name="Player" parent="." instance=ExtResource("2_c58s0")]
+position = Vector2(1989, 890)
+max_x = 3910
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+offset = Vector2(0, -352)
+limit_left = 0
+limit_right = 3942
+editor_draw_limits = true
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(1978, 926)
+collision_mask = 2
+script = ExtResource("4_c0seu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_a0b0r")

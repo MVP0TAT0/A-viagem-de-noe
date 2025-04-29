@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://bjy36wweley6d"]
+
+[ext_resource type="Script" path="res://scripts/background.gd" id="1_srd7j"]
+[ext_resource type="Texture2D" uid="uid://bqx26wp5b6tvl" path="res://assets/Background/Background.png" id="1_thrka"]
+
+[node name="bg" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_srd7j")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_thrka")
