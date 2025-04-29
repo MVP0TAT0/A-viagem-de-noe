@@ -23,5 +23,5 @@ func _on_dialog_choice_made(choice_index):
 		GameState.window_completed = true
 		GameState.window_good_choice = false
 	
-	# Return to main room
-	get_tree().change_scene_to_file("res://scenes/main.tscn")
+	# Verificar se os níveis foram todos completos
+	GameState.check_all_levels_completed_or_return()

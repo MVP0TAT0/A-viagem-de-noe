@@ -27,7 +27,7 @@ limit_right = 3930
 editor_draw_limits = true
 
 [node name="Area2D" type="Area2D" parent="."]
-position = Vector2(909, 795)
+position = Vector2(1858, 795)
 collision_mask = 2
 script = ExtResource("4_qqcrs")
 

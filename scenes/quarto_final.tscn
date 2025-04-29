@@ -1,0 +1,113 @@
+[gd_scene load_steps=19 format=3 uid="uid://4ma5brkxuepl"]
+
+[ext_resource type="Texture2D" uid="uid://c5ibnc62ph31m" path="res://assets/ViagemDeNoe/quarto.png" id="1_n5why"]
+[ext_resource type="Texture2D" uid="uid://n6yf1upphsfy" path="res://assets/ViagemDeNoe/chest_neutral.png" id="2_b2gc6"]
+[ext_resource type="Script" path="res://scripts/chest.gd" id="3_03oea"]
+[ext_resource type="Texture2D" uid="uid://ccugmxvqr4g4h" path="res://assets/ViagemDeNoe/mirror_neutral.png" id="4_8u256"]
+[ext_resource type="Script" path="res://scripts/mirror.gd" id="5_jymam"]
+[ext_resource type="Texture2D" uid="uid://b2redrxsj7bhy" path="res://assets/ViagemDeNoe/window_neutral.png" id="6_1gni3"]
+[ext_resource type="Script" path="res://scripts/window.gd" id="7_gw1bc"]
+[ext_resource type="Script" path="res://scripts/estante.gd" id="8_88qub"]
+[ext_resource type="Script" path="res://scripts/cama.gd" id="9_dybn6"]
+[ext_resource type="Texture2D" uid="uid://caik4pn1ia0pp" path="res://assets/Food/Apple.png" id="10_b2qnw"]
+[ext_resource type="PackedScene" uid="uid://b81xyootrnoab" path="res://scenes/player.tscn" id="10_uiyfe"]
+[ext_resource type="Script" path="res://scripts/mãe.gd" id="11_5nk05"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8jhqj"]
+size = Vector2(7129.99, 1791.16)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tupur"]
+radius = 119.65
+height = 676.259
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y25bd"]
+size = Vector2(788.096, 188.571)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nxlj2"]
+size = Vector2(215, 136)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bpe3j"]
+size = Vector2(322, 51)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_678o8"]
+size = Vector2(14.1133, 14.8561)
+
+[node name="Quarto final" type="Node2D"]
+
+[node name="background" type="Sprite2D" parent="."]
+position = Vector2(960, 540)
+scale = Vector2(0.751562, 0.754167)
+texture = ExtResource("1_n5why")
+
+[node name="Chest" type="Sprite2D" parent="."]
+position = Vector2(872, 861)
+scale = Vector2(0.18, 0.18)
+texture = ExtResource("2_b2gc6")
+
+[node name="Area2D" type="Area2D" parent="Chest"]
+position = Vector2(1.24445, 1.95557)
+scale = Vector2(0.177778, 0.177778)
+collision_mask = 2
+script = ExtResource("3_03oea")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Chest/Area2D"]
+position = Vector2(-9.49609, 150.367)
+shape = SubResource("RectangleShape2D_8jhqj")
+
+[node name="Mirror" type="Sprite2D" parent="."]
+position = Vector2(1533, 635)
+scale = Vector2(0.545, 0.545)
+texture = ExtResource("4_8u256")
+
+[node name="Area2D" type="Area2D" parent="Mirror"]
+collision_mask = 2
+script = ExtResource("5_jymam")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Mirror/Area2D"]
+position = Vector2(4.31651, 5.75532)
+rotation = 0.0333971
+shape = SubResource("CapsuleShape2D_tupur")
+
+[node name="Window" type="Sprite2D" parent="."]
+position = Vector2(1218, 626)
+scale = Vector2(0.42, 0.42)
+texture = ExtResource("6_1gni3")
+
+[node name="Area2D" type="Area2D" parent="Window"]
+collision_mask = 2
+script = ExtResource("7_gw1bc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Window/Area2D"]
+position = Vector2(-27.3813, 84.2856)
+shape = SubResource("RectangleShape2D_y25bd")
+
+[node name="Estante" type="Area2D" parent="."]
+collision_mask = 2
+script = ExtResource("8_88qub")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Estante"]
+position = Vector2(602.5, 710)
+shape = SubResource("RectangleShape2D_nxlj2")
+
+[node name="Cama" type="Area2D" parent="."]
+collision_mask = 2
+script = ExtResource("9_dybn6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cama"]
+position = Vector2(304, 874.5)
+shape = SubResource("RectangleShape2D_bpe3j")
+
+[node name="Mãe" type="Sprite2D" parent="."]
+position = Vector2(1848, 746)
+scale = Vector2(5.385, 5.385)
+texture = ExtResource("10_b2qnw")
+
+[node name="Area2D" type="Area2D" parent="Mãe"]
+collision_mask = 2
+script = ExtResource("11_5nk05")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Mãe/Area2D"]
+shape = SubResource("RectangleShape2D_678o8")
+
+[node name="Player" parent="." instance=ExtResource("10_uiyfe")]
+position = Vector2(1696, 776)

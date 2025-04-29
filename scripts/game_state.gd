@@ -49,3 +49,25 @@ func show_nothing_happens_dialog():
 func _on_nothing_dialog_finished(_choice = 0):
 	# Não faz nada, só fecha o diálogo
 	pass
+	
+func check_all_levels_completed():
+	if chest_completed and window_completed and mirror_completed:
+		get_tree().change_scene_to_file("res://scenes/quarto_final.tscn")
+
+func get_good_choice_count() -> int:
+	var count = 0
+	if chest_completed and chest_good_choice:
+		count += 1
+	if window_completed and window_good_choice:
+		count += 1
+	if mirror_completed and mirror_good_choice:
+		count += 1
+	return count
+
+func check_all_levels_completed_or_return():
+	if chest_completed and window_completed and mirror_completed:
+		print("Todas as escolhas feitas — a ir para quarto_final.")
+		get_tree().change_scene_to_file("res://scenes/quarto_final.tscn")
+	else:
+		print("Ainda faltam escolhas — a voltar ao main.tscn.")
+		get_tree().change_scene_to_file("res://scenes/main.tscn")
