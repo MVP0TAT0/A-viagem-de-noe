@@ -1,0 +1,117 @@
+[gd_scene load_steps=2 format=3 uid="uid://b7mmgxtwgqwnx"]
+
+[ext_resource type="Script" uid="uid://dhkc8llljgtl0" path="res://scripts/menu.gd" id="1_yqeox"]
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_yqeox")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 2.0
+offset_right = 42.0
+offset_bottom = 40.0
+scale = Vector2(48.0496, 26.8331)
+color = Color(0.750179, 0.737989, 0.670509, 1)
+
+[node name="Título" type="Label" parent="."]
+layout_mode = 0
+offset_left = 182.0
+offset_top = 56.0
+offset_right = 1740.0
+offset_bottom = 302.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 5
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/outline_size = 2
+theme_override_constants/shadow_outline_size = 5
+theme_override_font_sizes/font_size = 180
+text = "A VIAGEM DE NOÉ"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Seta" type="Label" parent="."]
+layout_mode = 0
+offset_left = 186.0
+offset_top = 475.0
+offset_right = 232.0
+offset_bottom = 585.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 5
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/outline_size = 2
+theme_override_constants/shadow_outline_size = 5
+theme_override_font_sizes/font_size = 80
+text = ">"
+
+[node name="Jogar" type="Label" parent="Seta"]
+layout_mode = 0
+offset_left = 106.0
+offset_right = 304.0
+offset_bottom = 110.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 5
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/outline_size = 2
+theme_override_constants/shadow_outline_size = 5
+theme_override_font_sizes/font_size = 80
+text = "Jogar"
+
+[node name="Seta2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 186.0
+offset_top = 616.0
+offset_right = 232.0
+offset_bottom = 726.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 5
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/outline_size = 2
+theme_override_constants/shadow_outline_size = 5
+theme_override_font_sizes/font_size = 80
+text = ">"
+
+[node name="Como Jogar" type="Label" parent="Seta2"]
+layout_mode = 0
+offset_left = 106.0
+offset_right = 304.0
+offset_bottom = 110.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 5
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/outline_size = 2
+theme_override_constants/shadow_outline_size = 5
+theme_override_font_sizes/font_size = 80
+text = "Como Jogar"
+
+[node name="Seta3" type="Label" parent="."]
+layout_mode = 0
+offset_left = 186.0
+offset_top = 767.0
+offset_right = 232.0
+offset_bottom = 877.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 5
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/outline_size = 2
+theme_override_constants/shadow_outline_size = 5
+theme_override_font_sizes/font_size = 80
+text = ">"
+
+[node name="Sair" type="Label" parent="Seta3"]
+layout_mode = 0
+offset_left = 106.0
+offset_right = 304.0
+offset_bottom = 110.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 5
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/outline_size = 2
+theme_override_constants/shadow_outline_size = 5
+theme_override_font_sizes/font_size = 80
+text = "Sair"

@@ -1,8 +1,3 @@
-res://scenes/background.tscn
-res://scenes/chest_level.tscn
-res://scenes/dialog_box.tscn
-res://scenes/level.tscn
+res://scenes/menu.tscn
+res://scripts/menu.gd
 res://scenes/main.tscn
-res://scenes/mirror_level.tscn
-res://scenes/player.tscn
-res://scenes/window_level.tscn

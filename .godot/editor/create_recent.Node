@@ -1,3 +1,8 @@
+ColorRect
+Label
+CenterContainer
+VBoxContainer
+Button
 CollisionShape2D
 Area2D
 Camera2D
