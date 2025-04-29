@@ -16,6 +16,11 @@ offset_bottom = -101.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="CharacterName" type="Label" parent="Panel"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
 [node name="DialogText" type="Label" parent="Panel"]
 layout_mode = 1
 anchors_preset = 12
@@ -24,7 +29,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 29.0
 offset_top = -128.0
-offset_right = 109.0
+offset_right = -22.0
 offset_bottom = -95.0
 grow_horizontal = 2
 grow_vertical = 0
