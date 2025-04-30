@@ -1,6 +1,6 @@
-res://scenes/menu.tscn
-res://scripts/menu.gd
 res://scenes/main.tscn
-res://scenes/dialog_box.tscn
 res://scripts/dialog_box.gd
-res://scripts/moldura.gd
+res://scripts/menu.gd
+res://scenes/menu.tscn
+res://scenes/dialog_box.tscn
+res://scripts/panel.gd
