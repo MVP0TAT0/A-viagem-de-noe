@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://dcaxmy6pw8dgm"]
+[gd_scene load_steps=18 format=3 uid="uid://dcaxmy6pw8dgm"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_o4fj4"]
 [ext_resource type="Texture2D" uid="uid://c5ibnc62ph31m" path="res://assets/ViagemDeNoe/quarto.png" id="2_uivf1"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://b81xyootrnoab" path="res://scenes/player.tscn" id="9_85g3d"]
 [ext_resource type="Script" path="res://scripts/estante.gd" id="9_utva2"]
 [ext_resource type="Script" path="res://scripts/cama.gd" id="10_pmn80"]
+[ext_resource type="Texture2D" uid="uid://0uf5uu6ffnxf" path="res://assets/light.png" id="12_e3021"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ao8pf"]
 size = Vector2(7129.99, 1791.16)
@@ -96,3 +97,28 @@ shape = SubResource("RectangleShape2D_qgxrf")
 
 [node name="Player" parent="." instance=ExtResource("9_85g3d")]
 position = Vector2(346, 776)
+
+[node name="DarkOverlay" type="ColorRect" parent="."]
+visible = false
+z_index = 5
+custom_minimum_size = Vector2(2000, 2000)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -35.0
+offset_top = -448.0
+offset_right = 1965.0
+offset_bottom = 1552.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color(0, 0, 0, 0.6)
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+visible = false
+position = Vector2(97, 754)
+scale = Vector2(3.68929, 2.87122)
+color = Color(0.822113, 0.79841, 0, 0.831373)
+texture = ExtResource("12_e3021")
+texture_scale = 0.5
