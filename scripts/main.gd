@@ -12,3 +12,4 @@ func _ready() -> void:
 	# Atualiza a aparência dos objetos (se quiseres garantir 100%)
 	$Chest/Area2D.update_appearance()
 	$Mirror/Area2D.update_appearance()
+	

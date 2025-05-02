@@ -24,8 +24,11 @@ func _process(_delta):
 func interact():
 	if not GameState.window_completed:
 		GameState.show_dialog_sequence(
-			["(A janela está semi-aberta)",
-			"(Sentes um leve vento a bater-te na cara)",
+			["(A janela encontra-se semi-aberta)",
+			"Lá fora… é real? Ou só mais uma invenção dela?",
+			"Todos riam. Olhavam-me como se eu fosse outro bicho qualquer.",
+			"Talvez eu não possa ser como eles…",
+			"A solidão não começou com eles. Começou aqui.",
 			"...!?"
 			],
 			false,
