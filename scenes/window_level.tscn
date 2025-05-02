@@ -1,9 +1,9 @@
 [gd_scene load_steps=6 format=3 uid="uid://dopf1ywqe34kl"]
 
-[ext_resource type="Script" uid="uid://cbvwbeymx0wag" path="res://scripts/window_level.gd" id="1_75wce"]
+[ext_resource type="Script" path="res://scripts/window_level.gd" id="1_75wce"]
 [ext_resource type="Texture2D" uid="uid://cm7dgxsyexpbl" path="res://assets/ViagemDeNoe/janela_bg.png" id="2_ho4wc"]
 [ext_resource type="PackedScene" uid="uid://b81xyootrnoab" path="res://scenes/player.tscn" id="3_c3trb"]
-[ext_resource type="Script" uid="uid://cjfwkrei08eti" path="res://scripts/window_trigger.gd" id="4_qqcrs"]
+[ext_resource type="Script" path="res://scripts/window_trigger.gd" id="4_qqcrs"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u423m"]
 size = Vector2(101, 80)
