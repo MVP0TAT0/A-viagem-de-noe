@@ -18,7 +18,7 @@ scale = Vector2(0.66, 0.66)
 texture = ExtResource("2_ho4wc")
 
 [node name="Player" parent="." instance=ExtResource("3_c3trb")]
-position = Vector2(87, 890)
+position = Vector2(2646, 890)
 max_x = 3910
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
@@ -28,7 +28,7 @@ limit_right = 3930
 editor_draw_limits = true
 
 [node name="Area2D" type="Area2D" parent="."]
-position = Vector2(1858, 795)
+position = Vector2(2653, 795)
 collision_mask = 2
 script = ExtResource("4_qqcrs")
 

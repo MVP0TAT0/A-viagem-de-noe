@@ -117,8 +117,8 @@ color = Color(0, 0, 0, 0.6)
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
 visible = false
-position = Vector2(97, 754)
-scale = Vector2(3.68929, 2.87122)
+position = Vector2(88, 825)
+scale = Vector2(5.68929, 2.43122)
 color = Color(0.822113, 0.79841, 0, 0.831373)
 texture = ExtResource("12_e3021")
 texture_scale = 0.5
