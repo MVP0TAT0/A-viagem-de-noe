@@ -26,18 +26,31 @@ func _ready():
 	# Fonte estilo terminal
 	var terminal_font = preload("res://fonts/JetBrainsMono-Regular.ttf")
 	
-	character_name_label.add_theme_font_override("font", terminal_font)
-	dialog_text.add_theme_font_override("font", terminal_font)
-	character_name_label.add_theme_color_override("font_color", Color.WHITE)
-	dialog_text.add_theme_color_override("font_color", Color.WHITE)
+	character_name_label.set("theme_override_colors/font_color", Color.WHITE)
+	character_name_label.add_theme_font_size_override("font_size", 10)
 
-	# Fundo preto translúcido, sem StyleBox
-	panel.modulate = Color(255, 255, 255, 0.8)
-	panel.add_theme_stylebox_override("panel", null)
+	dialog_text.set("theme_override_colors/font_color", Color.WHITE)
+	continue_label.set("theme_override_colors/font_color", Color.WHITE)
 
-	# Redesenhar borda tracejada
+	
+	var white = Color(1, 1, 1)
+
+	# Aplica texto branco a todos os elementos
+	character_name_label.add_theme_color_override("font_color", white)
+	dialog_text.add_theme_color_override("font_color", white)
+	continue_label.add_theme_color_override("font_color", white)
+	good_choice_button.add_theme_color_override("font_color", white)
+	bad_choice_button.add_theme_color_override("font_color", white)
+
+	# Fundo preto translúcido
+	var panel_style = StyleBoxFlat.new()
+	panel_style.bg_color = Color(0, 0, 0, 0.8)
+	panel.add_theme_stylebox_override("panel", panel_style)
+
+	# Borda tracejada
 	panel.queue_redraw()
 	panel.connect("draw", _on_panel_draw)
+
 
 func _on_panel_draw():
 	var dash_len = 8
@@ -71,7 +84,7 @@ func _on_panel_draw():
 		y += dash_len + gap
 
 func set_character_name(name: String):
-	character_name_label.text = "│ " + name
+	character_name_label.text = "│ Nome" + name
 
 func set_dialog_sequence(lines: Array, show_choices := false, good_text := "", bad_text := "", character_name := ""):
 	dialog_lines = lines
@@ -127,9 +140,14 @@ func _process(_delta):
 			_update_text()
 
 func _show_choices():
+	# Estilo com borda branca e fundo transparente (botão selecionado)
 	border_style.set_border_width_all(1)
 	border_style.border_color = Color(1, 1, 1)
+	border_style.bg_color = Color(0, 0, 0, 0)  # fundo totalmente transparente
+
+	# Estilo sem borda nem fundo (botão não selecionado)
 	empty_style.set_border_width_all(0)
+	empty_style.bg_color = Color(0, 0, 0, 0)  # também transparente
 
 	continue_label.visible = false
 	can_continue = false
@@ -140,6 +158,7 @@ func _show_choices():
 	selected_choice = 0
 	_update_choice_highlight()
 	choosing = true
+
 
 func _update_choice_highlight():
 	var white = Color(1, 1, 1)

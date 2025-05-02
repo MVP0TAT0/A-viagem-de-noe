@@ -1,0 +1,33 @@
+[gd_scene load_steps=4 format=3 uid="uid://jjw3bjodn56o"]
+
+[ext_resource type="Script" path="res://scripts/intro.gd" id="1_gn0q4"]
+[ext_resource type="Texture2D" uid="uid://bqx26wp5b6tvl" path="res://assets/Background/Background.png" id="1_i1mex"]
+[ext_resource type="PackedScene" uid="uid://b81xyootrnoab" path="res://scenes/player.tscn" id="2_da8ye"]
+
+[node name="Intro" type="Node2D"]
+script = ExtResource("1_gn0q4")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1034, 525)
+scale = Vector2(4.605, 4.605)
+texture = ExtResource("1_i1mex")
+
+[node name="DarkOverlay" type="ColorRect" parent="."]
+z_index = 5
+custom_minimum_size = Vector2(2000, 2000)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -210.0
+offset_top = -173.0
+offset_right = 1790.0
+offset_bottom = 1827.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.24575, 0.718985)
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color(0, 0, 0, 0.796078)
+
+[node name="Player" parent="." instance=ExtResource("2_da8ye")]
+position = Vector2(997, 644)

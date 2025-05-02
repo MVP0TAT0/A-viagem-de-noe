@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://b7mmgxtwgqwnx"]
 
-[ext_resource type="Script" uid="uid://dhkc8llljgtl0" path="res://scripts/menu.gd" id="1_yqeox"]
+[ext_resource type="Script" path="res://scripts/menu.gd" id="1_yqeox"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -92,9 +92,9 @@ text = "Como Jogar"
 [node name="Seta3" type="Label" parent="."]
 layout_mode = 0
 offset_left = 186.0
-offset_top = 767.0
+offset_top = 765.0
 offset_right = 232.0
-offset_bottom = 877.0
+offset_bottom = 875.0
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 5
 theme_override_constants/shadow_offset_y = 2

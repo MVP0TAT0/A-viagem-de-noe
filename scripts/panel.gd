@@ -10,7 +10,6 @@ func _draw():
 	var color = Color(1, 1, 1)
 	var rect = get_rect()
 	
-
 	# Topo
 	var x = 0
 	while x < rect.size.x:
