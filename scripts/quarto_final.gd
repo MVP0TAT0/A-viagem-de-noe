@@ -1,16 +1,11 @@
 extends Node2D
 
-@onready var fade_rect = $FadeRect
 @onready var dark_overlay = $DarkOverlay
 
 func _ready() -> void:
 	# Apresenta visual inicial com fade-in
 	fade_in()
 	update_dark_overlay_opacity()
-
-	# Atualiza os objetos (como já tinhas)
-	$Chest/Area2D.update_appearance()
-	$Mirror/Area2D.update_appearance()
 
 func fade_in():
 	var fade_rect = $FadeRect

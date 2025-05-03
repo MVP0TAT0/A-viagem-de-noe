@@ -1,10 +1,12 @@
-[gd_scene load_steps=7 format=3 uid="uid://dopf1ywqe34kl"]
+[gd_scene load_steps=9 format=3 uid="uid://dopf1ywqe34kl"]
 
 [ext_resource type="Script" path="res://scripts/window_level.gd" id="1_75wce"]
 [ext_resource type="Texture2D" uid="uid://cm7dgxsyexpbl" path="res://assets/ViagemDeNoe/janela_bg.png" id="2_ho4wc"]
 [ext_resource type="PackedScene" uid="uid://b81xyootrnoab" path="res://scenes/player.tscn" id="3_c3trb"]
 [ext_resource type="Script" path="res://scripts/window_trigger.gd" id="4_qqcrs"]
 [ext_resource type="AudioStream" uid="uid://bhc1nopffgd5d" path="res://sounds/window_vozes.mp3" id="5_vwxt0"]
+[ext_resource type="Texture2D" uid="uid://b7u06mi8odicl" path="res://assets/ViagemDeNoe/coluna_1.png" id="6_pf26i"]
+[ext_resource type="Texture2D" uid="uid://be65sks04p3cb" path="res://assets/ViagemDeNoe/coluna_2.png" id="7_sqktd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u423m"]
 size = Vector2(101, 80)
@@ -13,8 +15,8 @@ size = Vector2(101, 80)
 script = ExtResource("1_75wce")
 
 [node name="Background" type="Sprite2D" parent="."]
-position = Vector2(1965, 531)
-scale = Vector2(0.66, 0.66)
+position = Vector2(1934, 538)
+scale = Vector2(1.135, 1.135)
 texture = ExtResource("2_ho4wc")
 
 [node name="Player" parent="." instance=ExtResource("3_c3trb")]
@@ -24,11 +26,11 @@ max_x = 3910
 [node name="Camera2D" type="Camera2D" parent="Player"]
 offset = Vector2(0, -352)
 limit_left = 0
-limit_right = 3930
+limit_right = 3870
 editor_draw_limits = true
 
 [node name="Area2D" type="Area2D" parent="."]
-position = Vector2(2653, 795)
+position = Vector2(3017, 795)
 collision_mask = 2
 script = ExtResource("4_qqcrs")
 
@@ -40,3 +42,25 @@ shape = SubResource("RectangleShape2D_u423m")
 stream = ExtResource("5_vwxt0")
 autoplay = true
 parameters/looping = true
+
+[node name="coluna_1" type="Sprite2D" parent="."]
+position = Vector2(873, 538)
+scale = Vector2(1.135, 1.135)
+texture = ExtResource("6_pf26i")
+
+[node name="coluna_2" type="Sprite2D" parent="."]
+position = Vector2(2564, 538)
+scale = Vector2(1.135, 1.135)
+texture = ExtResource("7_sqktd")
+
+[node name="FadeRect" type="ColorRect" parent="."]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 2490.0
+offset_bottom = 1080.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.56542, 1.03172)
+color = Color(0, 0, 0, 1)

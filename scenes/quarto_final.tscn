@@ -1,6 +1,7 @@
-[gd_scene load_steps=19 format=3 uid="uid://4ma5brkxuepl"]
+[gd_scene load_steps=23 format=3 uid="uid://fb4dvlsk0shv"]
 
-[ext_resource type="Texture2D" uid="uid://c5ibnc62ph31m" path="res://assets/ViagemDeNoe/quarto.png" id="1_n5why"]
+[ext_resource type="Texture2D" uid="uid://ik6yepxpfcq6" path="res://assets/ViagemDeNoe/quarto_final.png" id="1_sywcx"]
+[ext_resource type="Script" path="res://scripts/quarto_final.gd" id="1_t7wak"]
 [ext_resource type="Texture2D" uid="uid://n6yf1upphsfy" path="res://assets/ViagemDeNoe/chest_neutral.png" id="2_b2gc6"]
 [ext_resource type="Script" path="res://scripts/chest.gd" id="3_03oea"]
 [ext_resource type="Texture2D" uid="uid://ccugmxvqr4g4h" path="res://assets/ViagemDeNoe/mirror_neutral.png" id="4_8u256"]
@@ -9,35 +10,41 @@
 [ext_resource type="Script" path="res://scripts/window.gd" id="7_gw1bc"]
 [ext_resource type="Script" path="res://scripts/estante.gd" id="8_88qub"]
 [ext_resource type="Script" path="res://scripts/cama.gd" id="9_dybn6"]
-[ext_resource type="Texture2D" uid="uid://caik4pn1ia0pp" path="res://assets/Food/Apple.png" id="10_b2qnw"]
+[ext_resource type="Texture2D" uid="uid://4sg3d14jqndy" path="res://assets/ViagemDeNoe/mae.png" id="10_cj7d1"]
 [ext_resource type="PackedScene" uid="uid://b81xyootrnoab" path="res://scenes/player.tscn" id="10_uiyfe"]
 [ext_resource type="Script" path="res://scripts/mãe.gd" id="11_5nk05"]
+[ext_resource type="Texture2D" uid="uid://dj51v2dwl6sg4" path="res://assets/ViagemDeNoe/porta_fechada.png" id="12_hkhhu"]
+[ext_resource type="Script" path="res://scripts/porta.gd" id="13_rfajv"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_8jhqj"]
-size = Vector2(7129.99, 1791.16)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ylwf0"]
+size = Vector2(5067.48, 1791.16)
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tupur"]
-radius = 119.65
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hafta"]
+radius = 16.8022
 height = 676.259
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_y25bd"]
-size = Vector2(788.096, 188.571)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lyev3"]
+size = Vector2(545.239, 188.571)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_nxlj2"]
-size = Vector2(215, 136)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jarh5"]
+size = Vector2(107, 136)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_bpe3j"]
-size = Vector2(322, 51)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oucve"]
+size = Vector2(121, 51)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_otqtj"]
+size = Vector2(277.686, 102.562)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_678o8"]
-size = Vector2(14.1133, 14.8561)
+size = Vector2(244.047, 88.0953)
 
 [node name="Quarto final" type="Node2D"]
+script = ExtResource("1_t7wak")
 
 [node name="background" type="Sprite2D" parent="."]
-position = Vector2(960, 540)
+position = Vector2(1240, 540)
 scale = Vector2(0.751562, 0.754167)
-texture = ExtResource("1_n5why")
+texture = ExtResource("1_sywcx")
 
 [node name="Chest" type="Sprite2D" parent="."]
 position = Vector2(872, 861)
@@ -52,7 +59,7 @@ script = ExtResource("3_03oea")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Chest/Area2D"]
 position = Vector2(-9.49609, 150.367)
-shape = SubResource("RectangleShape2D_8jhqj")
+shape = SubResource("RectangleShape2D_ylwf0")
 
 [node name="Mirror" type="Sprite2D" parent="."]
 position = Vector2(1533, 635)
@@ -64,9 +71,9 @@ collision_mask = 2
 script = ExtResource("5_jymam")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Mirror/Area2D"]
-position = Vector2(4.31651, 5.75532)
+position = Vector2(-7.33952, 5.75532)
 rotation = 0.0333971
-shape = SubResource("CapsuleShape2D_tupur")
+shape = SubResource("CapsuleShape2D_hafta")
 
 [node name="Window" type="Sprite2D" parent="."]
 position = Vector2(1218, 626)
@@ -79,7 +86,7 @@ script = ExtResource("7_gw1bc")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Window/Area2D"]
 position = Vector2(-27.3813, 84.2856)
-shape = SubResource("RectangleShape2D_y25bd")
+shape = SubResource("RectangleShape2D_lyev3")
 
 [node name="Estante" type="Area2D" parent="."]
 collision_mask = 2
@@ -87,27 +94,77 @@ script = ExtResource("8_88qub")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Estante"]
 position = Vector2(602.5, 710)
-shape = SubResource("RectangleShape2D_nxlj2")
+shape = SubResource("RectangleShape2D_jarh5")
 
 [node name="Cama" type="Area2D" parent="."]
 collision_mask = 2
 script = ExtResource("9_dybn6")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Cama"]
-position = Vector2(304, 874.5)
-shape = SubResource("RectangleShape2D_bpe3j")
+position = Vector2(345, 874.5)
+shape = SubResource("RectangleShape2D_oucve")
+
+[node name="porta" type="Sprite2D" parent="."]
+position = Vector2(2340, 687)
+scale = Vector2(0.605, 0.605)
+texture = ExtResource("12_hkhhu")
+
+[node name="Area2D" type="Area2D" parent="porta"]
+collision_mask = 2
+script = ExtResource("13_rfajv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="porta/Area2D"]
+position = Vector2(-304.132, 41.2811)
+shape = SubResource("RectangleShape2D_otqtj")
 
 [node name="Mãe" type="Sprite2D" parent="."]
-position = Vector2(1848, 746)
-scale = Vector2(5.385, 5.385)
-texture = ExtResource("10_b2qnw")
+position = Vector2(1837, 750)
+scale = Vector2(0.84, 0.84)
+texture = ExtResource("10_cj7d1")
 
 [node name="Area2D" type="Area2D" parent="Mãe"]
 collision_mask = 2
 script = ExtResource("11_5nk05")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Mãe/Area2D"]
+position = Vector2(-50.0001, -5.95239)
+scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_678o8")
 
 [node name="Player" parent="." instance=ExtResource("10_uiyfe")]
-position = Vector2(1696, 776)
+position = Vector2(225, 776)
+max_x = 2365
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+position = Vector2(0, 119)
+offset = Vector2(0, -352)
+limit_left = 0
+limit_right = 2480
+editor_draw_limits = true
+
+[node name="FadeRect" type="ColorRect" parent="."]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 2490.0
+offset_bottom = 1080.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="DarkOverlay" type="ColorRect" parent="."]
+z_index = 5
+custom_minimum_size = Vector2(2000, 2000)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -35.0
+offset_top = -448.0
+offset_right = 2536.0
+offset_bottom = 1552.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color(0, 0, 0, 0.298039)

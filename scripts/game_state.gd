@@ -2,13 +2,13 @@
 extends Node
 
 # Track if levels are completed and their outcomes
-var chest_completed = false
+var chest_completed = true
 var chest_good_choice = false
 
-var window_completed = false
+var window_completed = true
 var window_good_choice = false
 
-var mirror_completed = false
+var mirror_completed = true
 var mirror_good_choice = false
 
 # Current active level
@@ -18,6 +18,7 @@ var current_level = ""
 var dialog_scene = preload("res://scenes/dialog_box.tscn")
 var current_dialog = null
 var interaction_locked = false
+var movement_locked = false
 
 func show_dialog_sequence(lines, show_choices, good_choice_text, bad_choice_text, target, callback_method):
 	if current_dialog == null:
@@ -71,3 +72,18 @@ func check_all_levels_completed_or_return():
 	else:
 		print("Ainda faltam escolhas — a voltar ao main.tscn.")
 		get_tree().change_scene_to_file("res://scenes/main.tscn")
+
+func reset_game_state():
+	chest_completed = false
+	chest_good_choice = false
+
+	window_completed = false
+	window_good_choice = false
+
+	mirror_completed = false
+	mirror_good_choice = false
+
+	current_level = ""
+	current_dialog = null
+	interaction_locked = false
+	movement_locked = false

@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3 uid="uid://cesoqlmahlltm"]
+
+[ext_resource type="Script" path="res://scripts/transition_manager.gd" id="1_qong5"]
+
+[node name="TransitionManager" type="CanvasLayer"]
+script = ExtResource("1_qong5")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 2490.0
+offset_bottom = 1080.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.56542, 1.03172)
+color = Color(0, 0, 0, 1)

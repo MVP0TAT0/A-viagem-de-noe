@@ -27,7 +27,12 @@ func _ready():
 	var terminal_font = preload("res://fonts/JetBrainsMono-Regular.ttf")
 	
 	character_name_label.set("theme_override_colors/font_color", Color.WHITE)
-	character_name_label.add_theme_font_size_override("font_size", 10)
+	character_name_label.add_theme_font_size_override("font_size", 12)
+	var bold_font = preload("res://fonts/JetBrainsMono-ExtraBold.ttf")
+	var font_resource = FontFile.new()
+	font_resource.font_data = bold_font
+
+	character_name_label.add_theme_font_override("font", font_resource)
 
 	dialog_text.set("theme_override_colors/font_color", Color.WHITE)
 	continue_label.set("theme_override_colors/font_color", Color.WHITE)
@@ -41,50 +46,27 @@ func _ready():
 	continue_label.add_theme_color_override("font_color", white)
 	good_choice_button.add_theme_color_override("font_color", white)
 	bad_choice_button.add_theme_color_override("font_color", white)
-
-	# Fundo preto translúcido
-	var panel_style = StyleBoxFlat.new()
+	
+	# Cria um StyleBoxFlat com fundo preto e borda branca
+	var panel_style := StyleBoxFlat.new()
 	panel_style.bg_color = Color(0, 0, 0, 0.8)
-	panel.add_theme_stylebox_override("panel", panel_style)
+	panel_style.set_border_width_all(1)
+	panel_style.border_color = Color.WHITE
 
-	# Borda tracejada
-	panel.queue_redraw()
-	panel.connect("draw", _on_panel_draw)
+	# Força um Theme novo para remover qualquer estilo herdado
+	var forced_theme := Theme.new()
+	forced_theme.set_stylebox("panel", "Panel", panel_style)
 
+	# Aplica esse Theme diretamente ao Panel
+	panel.theme = forced_theme
 
-func _on_panel_draw():
-	var dash_len = 8
-	var gap = 4
-	var thickness = 1
-	var color = Color(1, 1, 1)  # Branco
-	var rect = panel.get_rect()
-
-	# Topo
-	var x = 0
-	while x < rect.size.x:
-		panel.draw_line(Vector2(x, 0), Vector2(min(x + dash_len, rect.size.x), 0), color, thickness)
-		x += dash_len + gap
-
-	# Fundo
-	x = 0
-	while x < rect.size.x:
-		panel.draw_line(Vector2(x, rect.size.y - 1), Vector2(min(x + dash_len, rect.size.x), rect.size.y - 1), color, thickness)
-		x += dash_len + gap
-
-	# Esquerda
-	var y = 0
-	while y < rect.size.y:
-		panel.draw_line(Vector2(0, y), Vector2(0, min(y + dash_len, rect.size.y)), color, thickness)
-		y += dash_len + gap
-
-	# Direita
-	y = 0
-	while y < rect.size.y:
-		panel.draw_line(Vector2(rect.size.x - 1, y), Vector2(rect.size.x - 1, min(y + dash_len, rect.size.y)), color, thickness)
-		y += dash_len + gap
 
 func set_character_name(name: String):
-	character_name_label.text = "│ Nome" + name
+	if name.strip_edges() == "":
+		character_name_label.text = ""
+	else:
+		character_name_label.text = name
+
 
 func set_dialog_sequence(lines: Array, show_choices := false, good_text := "", bad_text := "", character_name := ""):
 	dialog_lines = lines
@@ -103,10 +85,19 @@ func _update_text():
 	choosing = false
 	can_continue = false
 
-	_start_typewriter(dialog_lines[current_line])
+	var current_entry = dialog_lines[current_line]
+
+	# Se for um dicionário com "name" e "text"
+	if typeof(current_entry) == TYPE_DICTIONARY:
+		set_character_name(current_entry.get("name", ""))
+		_start_typewriter(current_entry.get("text", ""))
+	else:
+		# Se for só texto
+		_start_typewriter(str(current_entry))
+
 
 func _start_typewriter(text: String) -> void:
-	dialog_text.text = "│ "
+	dialog_text.text = ""
 	var char_index = 0
 
 	while char_index < text.length():

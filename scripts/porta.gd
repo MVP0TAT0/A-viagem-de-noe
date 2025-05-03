@@ -1,15 +1,19 @@
 extends Area2D
 
-@export var level_scene = "res://scenes/chest_level.tscn"
-@onready var prompt = get_tree().get_current_scene().get_node("Player/Noé/TextureRect")
-
 var player_inside := false
+@onready var prompt = get_tree().get_current_scene().get_node("Player/Noé/TextureRect")
+@onready var collision_shape_2d: CollisionShape2D = $CollisionShape2D
 
+
+# Called when the node enters the scene tree for the first time.
 func _ready():
 	connect("area_entered", _on_area_entered)
 	connect("area_exited", _on_area_exited)
+	collision_shape_2d.disabled = true
 
-	update_appearance()
+func ativar_interacao():
+	print_debug("✅ Ativar interação da porta chamado!")
+	$CollisionShape2D.disabled = false
 
 func _on_area_entered(area):
 	if area.name == "InteractionArea":
@@ -23,29 +27,24 @@ func _on_area_exited(area):
 		if prompt:
 			prompt.visible = false
 
-
 func _process(_delta):
 	if Input.is_action_just_pressed("interact") and player_inside and not GameState.interaction_locked and GameState.current_dialog == null:
 		interact()
 
 func interact():
-	if not GameState.chest_completed:
-		GameState.show_dialog_sequence(
-			["(A janela está semi-aberta)",
-			"(Sentes um leve vento a bater-te na cara)",
-			"...!?"
-			],
-			false,
-			"",
-			"",
-			self,
-			"_on_intro_dialog_finished"
-		)
-	else:
-		print("Nada acontece...")
-		show_nothing_happens_dialog()
+	GameState.show_dialog_sequence(
+		[
+			{"name": "Noé", "text": "Era uma vez uma história"},
+			{"name": "", "text": "Esta é a introdução"},
+			{"name": "", "text": "Vamos jogar"},
+		],
+		false,  # sem escolhas
+		"", "",  # sem opções
+		self,
+		"_on_dialog_finished"
+	)
 
-func _on_intro_dialog_finished(_choice = 0):
+func _on_dialog_finished(_choice = 0):
 	GameState.movement_locked = true  # Bloqueia movimento
 
 	# Desliga a interação
@@ -68,30 +67,15 @@ func _on_intro_dialog_finished(_choice = 0):
 		# Se não houver fade_rect, muda diretamente
 		_on_fade_complete()
 
-
 func _on_fade_complete():
 	await get_tree().create_timer(1.0).timeout  # 1 segundo de ecrã preto
 	GameState.current_level = "chest"
 	GameState.movement_locked = false
-	get_tree().change_scene_to_file(level_scene)
-
-
-func show_nothing_happens_dialog():
-	if GameState.chest_good_choice:
-		GameState.show_dialog_sequence(["O mundo lá fora já não me assusta tanto."], false, "", "", self, "_on_nothing_dialog_finished")
+	
+	var good_count = GameState.get_good_choice_count()
+	var bad_count = 3 - good_count
+	
+	if good_count > bad_count:
+		get_tree().change_scene_to_file("res://scenes/final_bom.tscn")
 	else:
-		GameState.show_dialog_sequence(["Não preciso do mundo lá fora..."], false, "", "", self, "_on_nothing_dialog_finished") 
-
-func _on_nothing_dialog_finished(_choice = 0):
-	# Só serve para fechar o diálogo
-	pass
-
-func update_appearance():
-	var sprite = get_parent()  # Acedemos ao Sprite2D
-
-	if not GameState.chest_completed:
-		sprite.texture = load("res://assets/ViagemDeNoe/chest_neutral.png")
-	elif GameState.chest_good_choice:
-		sprite.texture = load("res://assets/ViagemDeNoe/chest_good.png")
-	else:
-		sprite.texture = load("res://assets/ViagemDeNoe/chest_bad.png")
+		get_tree().change_scene_to_file("res://scenes/final_mau.tscn")
