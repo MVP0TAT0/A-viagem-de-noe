@@ -75,7 +75,6 @@ func _on_fade_complete():
 	GameState.movement_locked = false
 	get_tree().change_scene_to_file(level_scene)
 
-
 func show_nothing_happens_dialog():
 	if GameState.chest_good_choice:
 		GameState.show_dialog_sequence(["O mundo lá fora já não me assusta tanto."], false, "", "", self, "_on_nothing_dialog_finished")

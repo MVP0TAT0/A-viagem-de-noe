@@ -2,13 +2,13 @@
 extends Node
 
 # Track if levels are completed and their outcomes
-var chest_completed = true
+var chest_completed = false
 var chest_good_choice = false
 
-var window_completed = true
+var window_completed = false
 var window_good_choice = false
 
-var mirror_completed = true
+var mirror_completed = false
 var mirror_good_choice = false
 
 # Current active level
