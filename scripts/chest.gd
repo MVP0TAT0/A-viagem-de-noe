@@ -1,21 +1,28 @@
 extends Area2D
 
 @export var level_scene = "res://scenes/chest_level.tscn"
+@onready var prompt = get_tree().get_current_scene().get_node("Player/Noé/TextureRect")
 
 var player_inside := false
 
 func _ready():
 	connect("area_entered", _on_area_entered)
 	connect("area_exited", _on_area_exited)
+
 	update_appearance()
 
 func _on_area_entered(area):
 	if area.name == "InteractionArea":
 		player_inside = true
+		if prompt:
+			prompt.visible = true
 
 func _on_area_exited(area):
 	if area.name == "InteractionArea":
 		player_inside = false
+		if prompt:
+			prompt.visible = false
+
 
 func _process(_delta):
 	if Input.is_action_just_pressed("interact") and player_inside and not GameState.interaction_locked and GameState.current_dialog == null:
@@ -39,9 +46,35 @@ func interact():
 		show_nothing_happens_dialog()
 
 func _on_intro_dialog_finished(_choice = 0):
-	print("A mudar de nível para: ", level_scene)
+	GameState.movement_locked = true  # Bloqueia movimento
+
+	# Desliga a interação
+	var interaction_area = self
+	interaction_area.set_monitoring(false)
+	interaction_area.set_deferred("collision_layer", 0)
+	interaction_area.set_deferred("collision_mask", 0)
+
+	var shape = interaction_area.get_node_or_null("CollisionShape2D")
+	if shape:
+		shape.disabled = true
+
+	# Inicia fade
+	var fade_rect = $"../../FadeRect"
+	if fade_rect:
+		var tween = get_tree().create_tween()
+		tween.tween_property(fade_rect, "modulate:a", 1.0, 1.5)
+		tween.tween_callback(Callable(self, "_on_fade_complete"))
+	else:
+		# Se não houver fade_rect, muda diretamente
+		_on_fade_complete()
+
+
+func _on_fade_complete():
+	await get_tree().create_timer(1.0).timeout  # 1 segundo de ecrã preto
 	GameState.current_level = "chest"
+	GameState.movement_locked = false
 	get_tree().change_scene_to_file(level_scene)
+
 
 func show_nothing_happens_dialog():
 	if GameState.chest_good_choice:

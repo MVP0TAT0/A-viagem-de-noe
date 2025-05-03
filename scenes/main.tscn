@@ -14,20 +14,20 @@
 [ext_resource type="Texture2D" uid="uid://0uf5uu6ffnxf" path="res://assets/light.png" id="12_e3021"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ao8pf"]
-size = Vector2(7129.99, 1791.16)
+size = Vector2(5067.48, 1791.16)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1h67u"]
 radius = 119.65
 height = 676.259
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8gr0b"]
-size = Vector2(788.096, 188.571)
+size = Vector2(545.239, 188.571)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5fxn7"]
-size = Vector2(215, 136)
+size = Vector2(107, 136)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qgxrf"]
-size = Vector2(322, 51)
+size = Vector2(121, 51)
 
 [node name="main" type="Node2D"]
 script = ExtResource("1_o4fj4")
@@ -92,14 +92,14 @@ collision_mask = 2
 script = ExtResource("10_pmn80")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Cama"]
-position = Vector2(304, 874.5)
+position = Vector2(345, 874.5)
 shape = SubResource("RectangleShape2D_qgxrf")
 
 [node name="Player" parent="." instance=ExtResource("9_85g3d")]
-position = Vector2(346, 776)
+position = Vector2(225, 776)
+max_x = 1900
 
 [node name="DarkOverlay" type="ColorRect" parent="."]
-visible = false
 z_index = 5
 custom_minimum_size = Vector2(2000, 2000)
 anchors_preset = 15
@@ -113,7 +113,7 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-color = Color(0, 0, 0, 0.6)
+color = Color(0, 0, 0, 0.298039)
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
 visible = false
@@ -122,3 +122,14 @@ scale = Vector2(5.68929, 2.43122)
 color = Color(0.822113, 0.79841, 0, 0.831373)
 texture = ExtResource("12_e3021")
 texture_scale = 0.5
+
+[node name="FadeRect" type="ColorRect" parent="."]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 2490.0
+offset_bottom = 1080.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)

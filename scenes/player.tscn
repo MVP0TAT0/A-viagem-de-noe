@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://b81xyootrnoab"]
+[gd_scene load_steps=5 format=3 uid="uid://b81xyootrnoab"]
 
 [ext_resource type="Texture2D" uid="uid://kug5l8h4sf5g" path="res://assets/ViagemDeNoe/MC.png" id="1_3vyb7"]
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_g2els"]
+[ext_resource type="Texture2D" uid="uid://c2lhasprh6xhb" path="res://assets/ViagemDeNoe/X-Key.png" id="3_6jxtf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u8vuu"]
 size = Vector2(19.3646, 120.121)
@@ -12,6 +13,26 @@ script = ExtResource("1_g2els")
 [node name="Noé" type="Sprite2D" parent="."]
 scale = Vector2(0.515, 0.515)
 texture = ExtResource("1_3vyb7")
+
+[node name="TextureRect" type="TextureRect" parent="Noé"]
+offset_left = -139.806
+offset_top = -485.437
+offset_right = 372.194
+offset_bottom = 26.5631
+scale = Vector2(0.105338, 0.105338)
+texture = ExtResource("3_6jxtf")
+
+[node name="Label" type="Label" parent="Noé/TextureRect"]
+layout_mode = 0
+offset_left = 581.778
+offset_top = -83.7975
+offset_right = 3379.78
+offset_bottom = 545.203
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 115
+theme_override_font_sizes/font_size = 461
+text = "Interagir"
+vertical_alignment = 1
 
 [node name="InteractionArea" type="Area2D" parent="."]
 collision_layer = 2

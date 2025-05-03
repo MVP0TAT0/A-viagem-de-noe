@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bsb6olxhasrtt"
-path="res://.godot/imported/mirror.png-b33a91f39b804f40c411378935a80f44.ctex"
+uid="uid://4sg3d14jqndy"
+path="res://.godot/imported/mae.png-69480086c0ee4ddd8d1e52db2d7f596c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/ViagemDeNoe/mirror.png"
-dest_files=["res://.godot/imported/mirror.png-b33a91f39b804f40c411378935a80f44.ctex"]
+source_file="res://assets/ViagemDeNoe/mae.png"
+dest_files=["res://.godot/imported/mae.png-69480086c0ee4ddd8d1e52db2d7f596c.ctex"]
 
 [params]
 

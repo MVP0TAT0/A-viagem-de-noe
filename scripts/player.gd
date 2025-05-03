@@ -1,16 +1,18 @@
 extends Node2D
 
 @onready var sprite = $Noé
-@export var speed := 400
+@export var speed := 1000
 
 # Limites de movimento
 @export var min_x := 20
-@export var max_x := 1900
+@export var max_x := 2455
 
+func _ready():
+	$Noé/TextureRect.visible = false
 
 func _process(delta):
-	if GameState.current_dialog != null:
-		return  # Bloqueia movimento durante diálogo
+	if GameState.current_dialog != null or GameState.movement_locked:
+		return  # Bloqueia movimento durante diálogo ou fade
 
 	# Impede sair dos limites
 	position.x = clamp(position.x, min_x, max_x)
