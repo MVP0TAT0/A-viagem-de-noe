@@ -1,9 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://biwmjxotk80hl"]
+[gd_scene load_steps=8 format=3 uid="uid://biwmjxotk80hl"]
 
 [ext_resource type="Script" path="res://scripts/mirror_level.gd" id="1_38sln"]
 [ext_resource type="PackedScene" uid="uid://b81xyootrnoab" path="res://scenes/player.tscn" id="2_c58s0"]
 [ext_resource type="Texture2D" uid="uid://dj6uqmqbthb8v" path="res://assets/ViagemDeNoe/orgulho.png" id="2_hlisq"]
 [ext_resource type="Script" path="res://scripts/mirror_trigger.gd" id="4_c0seu"]
+[ext_resource type="AudioStream" uid="uid://c5e1xhg4wws6w" path="res://sounds/espelho/Espelho.mp3" id="5_ukr3j"]
+[ext_resource type="Script" path="res://scripts/inicio_window.gd" id="6_moqrl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a0b0r"]
 size = Vector2(138, 62)
@@ -17,7 +19,7 @@ scale = Vector2(1.135, 1.135)
 texture = ExtResource("2_hlisq")
 
 [node name="Player" parent="." instance=ExtResource("2_c58s0")]
-position = Vector2(336, 772)
+position = Vector2(157, 775)
 max_x = 3830
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
@@ -49,3 +51,19 @@ grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(1.61217, 1.11583)
 color = Color(0, 0, 0, 1)
+
+[node name="AudioPlayer" type="AudioStreamPlayer" parent="FadeRect"]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_ukr3j")
+autoplay = true
+parameters/looping = true
+
+[node name="Inicio_Window" type="Area2D" parent="."]
+position = Vector2(492, 773)
+collision_mask = 2
+script = ExtResource("6_moqrl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Inicio_Window"]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_a0b0r")

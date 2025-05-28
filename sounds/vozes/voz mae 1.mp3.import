@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://w8h0hcnmbl6c"
+path="res://.godot/imported/voz mae 1.mp3-fdd0c10a6e02c70cf983949b214e2ef6.mp3str"
+
+[deps]
+
+source_file="res://sounds/vozes/voz mae 1.mp3"
+dest_files=["res://.godot/imported/voz mae 1.mp3-fdd0c10a6e02c70cf983949b214e2ef6.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

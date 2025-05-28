@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dhsp7shvjglej"
+path="res://.godot/imported/abrir espelho.mp3-ebd60b587f19cc6ebaeba6a4298be6da.mp3str"
+
+[deps]
+
+source_file="res://sounds/espelho/abrir espelho.mp3"
+dest_files=["res://.godot/imported/abrir espelho.mp3-ebd60b587f19cc6ebaeba6a4298be6da.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

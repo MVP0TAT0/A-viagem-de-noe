@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://cnqtijovmndlk"]
+
+[ext_resource type="Texture2D" uid="uid://c46vavpq0wigf" path="res://assets/ViagemDeNoe/animation/noe_walk/walk_0.png" id="1_vyp5w"]
+[ext_resource type="Texture2D" uid="uid://brlqtnt0s37j8" path="res://assets/ViagemDeNoe/reflexo_neutral.png" id="2_2gnei"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_rs5or"]
+light_mode = 2
+
+[node name="Reflexo" type="Node2D"]
+
+[node name="reflexo" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.635294)
+material = SubResource("CanvasItemMaterial_rs5or")
+position = Vector2(-12.8441, 240.367)
+scale = Vector2(1.46, 1.46)
+texture = ExtResource("1_vyp5w")
+flip_h = true
+
+[node name="mask" type="PointLight2D" parent="."]
+blend_mode = 2
+texture = ExtResource("2_2gnei")

@@ -1,6 +1,9 @@
 # game_state.gd
 extends Node
 
+# Player position
+var return_position: Vector2 = Vector2.ZERO
+
 # Track if levels are completed and their outcomes
 var chest_completed = false
 var chest_good_choice = false
@@ -14,11 +17,20 @@ var mirror_good_choice = false
 # Current active level
 var current_level = ""
 
+# Dialogo intro quarto
+var intro_bedroom_dialog_shown := false
+
 # Dialog
 var dialog_scene = preload("res://scenes/dialog_box.tscn")
 var current_dialog = null
 var interaction_locked = false
 var movement_locked = false
+
+var cores := {
+	"mãe": Color("#E17F7F"),
+	"noé": Color("#7FB2E1"),
+	"outro": Color("#A5A5A5")
+}
 
 func show_dialog_sequence(lines, show_choices, good_choice_text, bad_choice_text, target, callback_method):
 	if current_dialog == null:
@@ -87,3 +99,5 @@ func reset_game_state():
 	current_dialog = null
 	interaction_locked = false
 	movement_locked = false
+	
+	intro_bedroom_dialog_shown = false

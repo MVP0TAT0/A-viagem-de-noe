@@ -1,14 +1,25 @@
-[gd_scene load_steps=8 format=3 uid="uid://b3y1jg7nquc4c"]
+[gd_scene load_steps=18 format=3 uid="uid://b3y1jg7nquc4c"]
 
 [ext_resource type="Script" path="res://scripts/chest_level.gd" id="1_piyfw"]
 [ext_resource type="Texture2D" uid="uid://dr0xh47l5q5ey" path="res://assets/ViagemDeNoe/memorias.png" id="2_hiqhq"]
 [ext_resource type="PackedScene" uid="uid://b81xyootrnoab" path="res://scenes/player.tscn" id="2_jw22o"]
 [ext_resource type="Script" path="res://scripts/chest_trigger.gd" id="3_bl6iv"]
+[ext_resource type="Script" path="res://scripts/inicio_chest.gd" id="5_58h4t"]
 [ext_resource type="Texture2D" uid="uid://bbsbvwmetr7nt" path="res://assets/ViagemDeNoe/arvore_1.png" id="5_lbijn"]
+[ext_resource type="Script" path="res://scripts/rip_1.gd" id="5_th1jq"]
 [ext_resource type="Texture2D" uid="uid://dvxnfahrh8ugp" path="res://assets/ViagemDeNoe/arvore_2.png" id="6_x0goc"]
+[ext_resource type="Script" path="res://scripts/rip_2.gd" id="7_0xp5i"]
+[ext_resource type="AudioStream" uid="uid://04yydaxv37al" path="res://sounds/bau/cemiterio.mp3" id="7_bhali"]
+[ext_resource type="Script" path="res://scripts/rip_3.gd" id="8_d73kp"]
+[ext_resource type="Script" path="res://scripts/rip_4.gd" id="9_85oxc"]
+[ext_resource type="Script" path="res://scripts/rip_5.gd" id="10_n7lue"]
+[ext_resource type="Script" path="res://scripts/rip_6.gd" id="11_dgwir"]
+[ext_resource type="Script" path="res://scripts/rip_7.gd" id="12_xxwog"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8bkjd"]
-size = Vector2(101, 80)
+size = Vector2(248.75, 63)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u77vy"]
 
 [node name="chest_level" type="Node2D"]
 script = ExtResource("1_piyfw")
@@ -19,7 +30,7 @@ scale = Vector2(1.14, 1.14)
 texture = ExtResource("2_hiqhq")
 
 [node name="Player" parent="." instance=ExtResource("2_jw22o")]
-position = Vector2(136, 825)
+position = Vector2(188, 825)
 max_x = 3865
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
@@ -29,21 +40,101 @@ limit_left = 0
 limit_right = 3885
 editor_draw_limits = true
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="mãe" type="Area2D" parent="."]
 position = Vector2(3551, 834)
 collision_mask = 2
 script = ExtResource("3_bl6iv")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(0, 1)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="mãe"]
+position = Vector2(-95.625, 9.5)
 shape = SubResource("RectangleShape2D_8bkjd")
+
+[node name="Inicio" type="Area2D" parent="."]
+position = Vector2(618, 895)
+collision_mask = 2
+script = ExtResource("5_58h4t")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Inicio"]
+position = Vector2(5.99999, 5)
+scale = Vector2(2.36, 1.76)
+shape = SubResource("RectangleShape2D_u77vy")
+
+[node name="rip1" type="Area2D" parent="."]
+position = Vector2(903, 895)
+collision_mask = 2
+script = ExtResource("5_th1jq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="rip1"]
+position = Vector2(9.25, 6)
+scale = Vector2(6.36, 1.76)
+shape = SubResource("RectangleShape2D_u77vy")
+
+[node name="rip2" type="Area2D" parent="."]
+position = Vector2(1154, 895)
+collision_mask = 2
+script = ExtResource("7_0xp5i")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="rip2"]
+position = Vector2(9.25, 6)
+scale = Vector2(6.36002, 1.76)
+shape = SubResource("RectangleShape2D_u77vy")
+
+[node name="rip3" type="Area2D" parent="."]
+position = Vector2(1385, 895)
+collision_mask = 2
+script = ExtResource("8_d73kp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="rip3"]
+position = Vector2(9.25, 6)
+scale = Vector2(6.36002, 1.76)
+shape = SubResource("RectangleShape2D_u77vy")
+
+[node name="rip4" type="Area2D" parent="."]
+position = Vector2(1620, 895)
+collision_mask = 2
+script = ExtResource("9_85oxc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="rip4"]
+position = Vector2(9.25, 6)
+scale = Vector2(6.36002, 1.76)
+shape = SubResource("RectangleShape2D_u77vy")
+
+[node name="rip5" type="Area2D" parent="."]
+position = Vector2(1879, 895)
+collision_mask = 2
+script = ExtResource("10_n7lue")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="rip5"]
+position = Vector2(9.25, 6)
+scale = Vector2(6.36002, 1.76)
+shape = SubResource("RectangleShape2D_u77vy")
+
+[node name="rip6" type="Area2D" parent="."]
+position = Vector2(2130, 895)
+collision_mask = 2
+script = ExtResource("11_dgwir")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="rip6"]
+position = Vector2(9.25, 6)
+scale = Vector2(6.36002, 1.76)
+shape = SubResource("RectangleShape2D_u77vy")
+
+[node name="rip7" type="Area2D" parent="."]
+position = Vector2(2379, 895)
+collision_mask = 2
+script = ExtResource("12_xxwog")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="rip7"]
+position = Vector2(9.25, 6)
+scale = Vector2(6.36002, 1.76)
+shape = SubResource("RectangleShape2D_u77vy")
 
 [node name="tree_1" type="Sprite2D" parent="."]
 position = Vector2(2970, 533)
 texture = ExtResource("5_lbijn")
 
 [node name="tree_2" type="Sprite2D" parent="."]
-position = Vector2(609, 557)
+position = Vector2(1071, 557)
 texture = ExtResource("6_x0goc")
 
 [node name="FadeRect" type="ColorRect" parent="."]
@@ -57,3 +148,10 @@ grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(1.56542, 1.03172)
 color = Color(0, 0, 0, 1)
+
+[node name="AudioPlayer" type="AudioStreamPlayer" parent="FadeRect"]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_bhali")
+autoplay = true
+parameters/looping = true

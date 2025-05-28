@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bwip86e2455ab"
+path="res://.godot/imported/vozes shiu.mp3-63fa4999e90027247369e75872c42d6d.mp3str"
+
+[deps]
+
+source_file="res://sounds/janela/vozes shiu.mp3"
+dest_files=["res://.godot/imported/vozes shiu.mp3-63fa4999e90027247369e75872c42d6d.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

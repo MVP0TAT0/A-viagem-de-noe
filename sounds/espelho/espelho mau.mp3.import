@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c2j25p4ak04u1"
+path="res://.godot/imported/espelho mau.mp3-36a519010f8aa378bc6d45f4d060f95e.mp3str"
+
+[deps]
+
+source_file="res://sounds/espelho/espelho mau.mp3"
+dest_files=["res://.godot/imported/espelho mau.mp3-36a519010f8aa378bc6d45f4d060f95e.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

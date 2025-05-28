@@ -1,0 +1,75 @@
+[gd_resource type="SpriteFrames" load_steps=16 format=3 uid="uid://d1om381a5wbjt"]
+
+[ext_resource type="Texture2D" uid="uid://cipeo1inhffx3" path="res://assets/ViagemDeNoe/animation/noe_idle/idle_0.png" id="1_v6esy"]
+[ext_resource type="Texture2D" uid="uid://c1le0i0uv87pl" path="res://assets/ViagemDeNoe/animation/noe_idle/idle_1.png" id="2_i0gdh"]
+[ext_resource type="Texture2D" uid="uid://dyt2fptumsmj" path="res://assets/ViagemDeNoe/animation/noe_idle/idle_2.png" id="3_wvnkf"]
+[ext_resource type="Texture2D" uid="uid://cvlff0ewfwukj" path="res://assets/ViagemDeNoe/animation/noe_idle/idle_3.png" id="4_hre7g"]
+[ext_resource type="Texture2D" uid="uid://cpf3nkwiajhme" path="res://assets/ViagemDeNoe/animation/noe_idle/idle_4.png" id="5_d3v4o"]
+[ext_resource type="Texture2D" uid="uid://c46vavpq0wigf" path="res://assets/ViagemDeNoe/animation/noe_walk/walk_0.png" id="6_2gg0b"]
+[ext_resource type="Texture2D" uid="uid://sdd6wugp7ru5" path="res://assets/ViagemDeNoe/animation/noe_walk/walk_1.png" id="7_wklm2"]
+[ext_resource type="Texture2D" uid="uid://cn827x5my1sit" path="res://assets/ViagemDeNoe/animation/noe_walk/walk_2.png" id="8_7vrry"]
+[ext_resource type="Texture2D" uid="uid://ctavbnj53vd8m" path="res://assets/ViagemDeNoe/animation/noe_walk/walk_3.png" id="9_5vh6w"]
+[ext_resource type="Texture2D" uid="uid://bgtkrft71mhsx" path="res://assets/ViagemDeNoe/animation/noe_walk/walk_4.png" id="10_fvkjb"]
+[ext_resource type="Texture2D" uid="uid://du0ge1jq4rydr" path="res://assets/ViagemDeNoe/animation/noe_walk/walk_5.png" id="11_iaq86"]
+[ext_resource type="Texture2D" uid="uid://1o8uthpivmak" path="res://assets/ViagemDeNoe/animation/noe_walk/walk_6.png" id="12_gqitl"]
+[ext_resource type="Texture2D" uid="uid://wbf6wiah05er" path="res://assets/ViagemDeNoe/animation/noe_walk/walk_7.png" id="13_rubpr"]
+[ext_resource type="Texture2D" uid="uid://cquwg3ngs17hm" path="res://assets/ViagemDeNoe/animation/noe_walk/walk_8.png" id="14_omd1u"]
+[ext_resource type="Texture2D" uid="uid://bc0h87c1xpg5g" path="res://assets/ViagemDeNoe/animation/noe_walk/walk_9.png" id="15_hl3fg"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_v6esy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_i0gdh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_wvnkf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_hre7g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_d3v4o")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 4.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_2gg0b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_wklm2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_7vrry")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_5vh6w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_fvkjb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_iaq86")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_gqitl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_rubpr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_omd1u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_hl3fg")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]

@@ -1,17 +1,38 @@
-[gd_scene load_steps=18 format=3 uid="uid://dcaxmy6pw8dgm"]
+[gd_scene load_steps=43 format=3 uid="uid://dcaxmy6pw8dgm"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_o4fj4"]
-[ext_resource type="Texture2D" uid="uid://c5ibnc62ph31m" path="res://assets/ViagemDeNoe/quarto.png" id="2_uivf1"]
+[ext_resource type="Texture2D" uid="uid://b2axx64b61eue" path="res://assets/ViagemDeNoe/quarto.png" id="2_uivf1"]
 [ext_resource type="Texture2D" uid="uid://n6yf1upphsfy" path="res://assets/ViagemDeNoe/chest_neutral.png" id="4_cdxpy"]
 [ext_resource type="Script" path="res://scripts/chest.gd" id="4_s78rg"]
 [ext_resource type="Texture2D" uid="uid://ccugmxvqr4g4h" path="res://assets/ViagemDeNoe/mirror_neutral.png" id="5_km7dp"]
 [ext_resource type="Script" path="res://scripts/window.gd" id="6_5wnnr"]
+[ext_resource type="Texture2D" uid="uid://c46vavpq0wigf" path="res://assets/ViagemDeNoe/animation/noe_walk/walk_0.png" id="7_2s77p"]
+[ext_resource type="Script" path="res://scripts/reflexo.gd" id="7_chxix"]
+[ext_resource type="Texture2D" uid="uid://cipeo1inhffx3" path="res://assets/ViagemDeNoe/animation/noe_idle/idle_0.png" id="7_s6shk"]
 [ext_resource type="Texture2D" uid="uid://b2redrxsj7bhy" path="res://assets/ViagemDeNoe/window_neutral.png" id="7_x3nk2"]
 [ext_resource type="Script" path="res://scripts/mirror.gd" id="8_1lbtk"]
+[ext_resource type="Texture2D" uid="uid://c1le0i0uv87pl" path="res://assets/ViagemDeNoe/animation/noe_idle/idle_1.png" id="8_frl42"]
+[ext_resource type="Texture2D" uid="uid://brlqtnt0s37j8" path="res://assets/ViagemDeNoe/reflexo_neutral.png" id="8_ykgfh"]
 [ext_resource type="PackedScene" uid="uid://b81xyootrnoab" path="res://scenes/player.tscn" id="9_85g3d"]
+[ext_resource type="Texture2D" uid="uid://dyt2fptumsmj" path="res://assets/ViagemDeNoe/animation/noe_idle/idle_2.png" id="9_ipkin"]
 [ext_resource type="Script" path="res://scripts/estante.gd" id="9_utva2"]
+[ext_resource type="Texture2D" uid="uid://cvlff0ewfwukj" path="res://assets/ViagemDeNoe/animation/noe_idle/idle_3.png" id="10_431xj"]
 [ext_resource type="Script" path="res://scripts/cama.gd" id="10_pmn80"]
+[ext_resource type="Texture2D" uid="uid://b6je0ty6ulb65" path="res://assets/ViagemDeNoe/quadro_1.png" id="11_cu22p"]
+[ext_resource type="Texture2D" uid="uid://cpf3nkwiajhme" path="res://assets/ViagemDeNoe/animation/noe_idle/idle_4.png" id="11_qa03q"]
 [ext_resource type="Texture2D" uid="uid://0uf5uu6ffnxf" path="res://assets/light.png" id="12_e3021"]
+[ext_resource type="Script" path="res://scripts/quadro.gd" id="12_vf1bu"]
+[ext_resource type="AudioStream" uid="uid://dyw80v8hx4chn" path="res://sounds/quarto/quarto 1.mp3" id="13_trceg"]
+[ext_resource type="Texture2D" uid="uid://sdd6wugp7ru5" path="res://assets/ViagemDeNoe/animation/noe_walk/walk_1.png" id="13_v8ei1"]
+[ext_resource type="Script" path="res://scripts/int_intro.gd" id="14_a8y0u"]
+[ext_resource type="Texture2D" uid="uid://cn827x5my1sit" path="res://assets/ViagemDeNoe/animation/noe_walk/walk_2.png" id="14_ug3ko"]
+[ext_resource type="Texture2D" uid="uid://ctavbnj53vd8m" path="res://assets/ViagemDeNoe/animation/noe_walk/walk_3.png" id="15_hai8b"]
+[ext_resource type="Texture2D" uid="uid://bgtkrft71mhsx" path="res://assets/ViagemDeNoe/animation/noe_walk/walk_4.png" id="16_mnmey"]
+[ext_resource type="Texture2D" uid="uid://du0ge1jq4rydr" path="res://assets/ViagemDeNoe/animation/noe_walk/walk_5.png" id="17_n78yu"]
+[ext_resource type="Texture2D" uid="uid://1o8uthpivmak" path="res://assets/ViagemDeNoe/animation/noe_walk/walk_6.png" id="18_v6kdn"]
+[ext_resource type="Texture2D" uid="uid://wbf6wiah05er" path="res://assets/ViagemDeNoe/animation/noe_walk/walk_7.png" id="19_q6wne"]
+[ext_resource type="Texture2D" uid="uid://cquwg3ngs17hm" path="res://assets/ViagemDeNoe/animation/noe_walk/walk_8.png" id="20_oq1y8"]
+[ext_resource type="Texture2D" uid="uid://bc0h87c1xpg5g" path="res://assets/ViagemDeNoe/animation/noe_walk/walk_9.png" id="21_ub7lt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ao8pf"]
 size = Vector2(5067.48, 1791.16)
@@ -19,6 +40,70 @@ size = Vector2(5067.48, 1791.16)
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1h67u"]
 radius = 119.65
 height = 676.259
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_dw5iy"]
+light_mode = 2
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_s2e85"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_s6shk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_frl42")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_ipkin")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_431xj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_qa03q")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 4.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_2s77p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_v8ei1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_ug3ko")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_hai8b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_mnmey")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_n78yu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_v6kdn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_q6wne")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_oq1y8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_ub7lt")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_rs5or"]
+light_mode = 2
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8gr0b"]
 size = Vector2(545.239, 188.571)
@@ -28,6 +113,8 @@ size = Vector2(107, 136)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qgxrf"]
 size = Vector2(121, 51)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jkv2x"]
 
 [node name="main" type="Node2D"]
 script = ExtResource("1_o4fj4")
@@ -66,6 +153,34 @@ position = Vector2(4.31651, 5.75532)
 rotation = 0.0333971
 shape = SubResource("CapsuleShape2D_1h67u")
 
+[node name="Reflexo" type="Node2D" parent="Mirror"]
+position = Vector2(-16.5137, 0)
+script = ExtResource("7_chxix")
+player_path = NodePath("../../Player")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Mirror/Reflexo"]
+modulate = Color(1, 1, 1, 0.635294)
+material = SubResource("CanvasItemMaterial_dw5iy")
+position = Vector2(12.8441, 240.367)
+scale = Vector2(1.46, 1.46)
+sprite_frames = SubResource("SpriteFrames_s2e85")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="reflexo" type="Sprite2D" parent="Mirror/Reflexo"]
+visible = false
+modulate = Color(1, 1, 1, 0.635294)
+material = SubResource("CanvasItemMaterial_rs5or")
+position = Vector2(-12.8441, 240.367)
+scale = Vector2(1.46, 1.46)
+texture = ExtResource("7_2s77p")
+flip_h = true
+
+[node name="mask" type="PointLight2D" parent="Mirror/Reflexo"]
+position = Vector2(14.6789, 0)
+blend_mode = 2
+texture = ExtResource("8_ykgfh")
+
 [node name="Window" type="Sprite2D" parent="."]
 position = Vector2(1218, 626)
 scale = Vector2(0.42, 0.42)
@@ -79,6 +194,12 @@ script = ExtResource("6_5wnnr")
 position = Vector2(-27.3813, 84.2856)
 shape = SubResource("RectangleShape2D_8gr0b")
 
+[node name="quadro" type="Sprite2D" parent="."]
+position = Vector2(330, 564)
+scale = Vector2(0.605, 0.605)
+texture = ExtResource("11_cu22p")
+script = ExtResource("12_vf1bu")
+
 [node name="Estante" type="Area2D" parent="."]
 collision_mask = 2
 script = ExtResource("9_utva2")
@@ -88,6 +209,7 @@ position = Vector2(602.5, 710)
 shape = SubResource("RectangleShape2D_5fxn7")
 
 [node name="Cama" type="Area2D" parent="."]
+position = Vector2(-41, 0)
 collision_mask = 2
 script = ExtResource("10_pmn80")
 
@@ -96,7 +218,7 @@ position = Vector2(345, 874.5)
 shape = SubResource("RectangleShape2D_qgxrf")
 
 [node name="Player" parent="." instance=ExtResource("9_85g3d")]
-position = Vector2(225, 776)
+position = Vector2(449, 776)
 max_x = 1900
 
 [node name="DarkOverlay" type="ColorRect" parent="."]
@@ -133,3 +255,20 @@ offset_bottom = 1080.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
+
+[node name="InteractionSoundPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("13_trceg")
+autoplay = true
+parameters/looping = false
+
+[node name="AudioPlayer" type="AudioStreamPlayer" parent="."]
+
+[node name="IntIntro" type="Area2D" parent="."]
+position = Vector2(153, 0)
+collision_mask = 2
+script = ExtResource("14_a8y0u")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="IntIntro"]
+position = Vector2(291, 874.5)
+scale = Vector2(3.12, 3.12)
+shape = SubResource("CircleShape2D_jkv2x")

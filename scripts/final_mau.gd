@@ -9,12 +9,14 @@ func _ready():
 func _on_video_finished():
 	GameState.show_dialog_sequence(
 		[
-			{"name": "Noé", "text": "Era uma vez uma história"},
-			{"name": "", "text": "Esta é a introdução"},
-			{"name": "", "text": "Vamos jogar"},
+			{"name": "", "text": "[font_size=20]Esta é a história de Noé."},
+			{"name": "", "text": "[font_size=20]Pensas que já acabou? Não."},
+			{"name": "", "text": "[font_size=20]As tuas escolhas levaram Noé a cair num ciclo de repetição até encontrar rumo para a sua vida."},
+			{"name": "", "text": "[font_size=20]Como já deves ter percebido, dependendo das tuas escolhas, o final e os visuais do jogo modificam."},
+			{"name": "", "text": "[font_size=20]Queres voltar a jogar?"},
 		],
 		true,  # com escolhas
-		"Sim", "Não",  # com opções
+		"Tentar outra vez!", "Por hoje não.",  # com opções
 		self,
 		"_on_dialog_finished"
 	)

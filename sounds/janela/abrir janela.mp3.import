@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b5ch7frae4oyx"
+path="res://.godot/imported/abrir janela.mp3-d96aab0b18f5ff952d2f2b709f90fef8.mp3str"
+
+[deps]
+
+source_file="res://sounds/janela/abrir janela.mp3"
+dest_files=["res://.godot/imported/abrir janela.mp3-d96aab0b18f5ff952d2f2b709f90fef8.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

@@ -5,12 +5,12 @@ extends Node2D
 func _ready():
 	GameState.show_dialog_sequence(
 		[
-			{"name": "", "text": "[ Este foi um dos dois finais do jogo. ]"},
-			{"name": "", "text": "[ Dependendo das tuas escolhas, o final muda. ]"},
-			{"name": "", "text": "[ Queres voltar a jogar? ]"},
+			{"name": "", "text": "[font_size=20]Este foi um dos dois finais do jogo."},
+			{"name": "", "text": "[font_size=20]Dependendo das tuas escolhas, o final e os visuais do jogo modificam."},
+			{"name": "", "text": "[font_size=20]Queres voltar a jogar?"},
 		],
 		true,  # com escolhas
-		"Sim", "Não",  # com opções
+		"Tentar outra vez!", "Por hoje não.",  # com opções
 		self,
 		"_on_dialog_finished"
 	)

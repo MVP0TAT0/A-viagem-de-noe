@@ -4,8 +4,7 @@ signal choice_made(choice_index)
 signal dialog_finished
 
 @onready var panel = $Panel
-@onready var character_name_label = $Panel/CharacterName
-@onready var dialog_text = $Panel/DialogText
+@onready var dialog_text: RichTextLabel = $Panel/DialogText
 @onready var good_choice_button = $Panel/GoodChoiceButton
 @onready var bad_choice_button = $Panel/BadChoiceButton
 @onready var continue_label = $Panel/ContinueLabel
@@ -18,63 +17,53 @@ var selected_choice = 0
 var choosing = false
 var can_continue = false
 
-# Borda de botão selecionado
 var border_style := StyleBoxFlat.new()
 var empty_style := StyleBoxFlat.new()
 
+var is_typing = false
+var skip_typewriter = false
+
+
 func _ready():
-	# Fonte estilo terminal
-	var terminal_font = preload("res://fonts/JetBrainsMono-Regular.ttf")
+	var white = Color.WHITE
 	
-	character_name_label.set("theme_override_colors/font_color", Color.WHITE)
-	character_name_label.add_theme_font_size_override("font_size", 12)
-	var bold_font = preload("res://fonts/JetBrainsMono-ExtraBold.ttf")
-	var font_resource = FontFile.new()
-	font_resource.font_data = bold_font
-
-	character_name_label.add_theme_font_override("font", font_resource)
-
-	dialog_text.set("theme_override_colors/font_color", Color.WHITE)
-	continue_label.set("theme_override_colors/font_color", Color.WHITE)
-
-	
-	var white = Color(1, 1, 1)
-
-	# Aplica texto branco a todos os elementos
-	character_name_label.add_theme_color_override("font_color", white)
-	dialog_text.add_theme_color_override("font_color", white)
-	continue_label.add_theme_color_override("font_color", white)
-	good_choice_button.add_theme_color_override("font_color", white)
-	bad_choice_button.add_theme_color_override("font_color", white)
-	
-	# Cria um StyleBoxFlat com fundo preto e borda branca
+	# Estilo de fundo do painel
 	var panel_style := StyleBoxFlat.new()
-	panel_style.bg_color = Color(0, 0, 0, 0.8)
-	panel_style.set_border_width_all(1)
-	panel_style.border_color = Color.WHITE
-
-	# Força um Theme novo para remover qualquer estilo herdado
+	panel_style.bg_color = Color(0, 0, 0, 0)
 	var forced_theme := Theme.new()
 	forced_theme.set_stylebox("panel", "Panel", panel_style)
-
-	# Aplica esse Theme diretamente ao Panel
 	panel.theme = forced_theme
 
+	# Fonte personalizada
+	var font_regular = FontFile.new()
+	font_regular.font_data = load("res://fonts/Lapture_Regular.ttf")
+	var font_bold = FontFile.new()
+	font_bold.font_data = load("res://fonts/Lapture_Bold.ttf")
 
-func set_character_name(name: String):
-	if name.strip_edges() == "":
-		character_name_label.text = ""
-	else:
-		character_name_label.text = name
+	dialog_text.add_theme_color_override("font_color", white)
+	dialog_text.add_theme_font_override("normal_font", font_regular)
+	dialog_text.add_theme_font_override("bold_font", font_bold)
+	dialog_text.bbcode_enabled = true
 
+	continue_label.add_theme_color_override("font_color", white)
+	continue_label.add_theme_font_override("font", font_regular)
+	continue_label.add_theme_font_size_override("font_size", 16)
+
+	good_choice_button.add_theme_color_override("font_color", white)
+	good_choice_button.add_theme_font_override("font", font_regular)
+	good_choice_button.add_theme_font_size_override("font_size", 18)
+	
+	bad_choice_button.add_theme_color_override("font_color", white)
+	bad_choice_button.add_theme_font_override("font", font_regular)
+	bad_choice_button.add_theme_font_size_override("font_size", 18)
+
+	dialog_text.clear()
 
 func set_dialog_sequence(lines: Array, show_choices := false, good_text := "", bad_text := "", character_name := ""):
 	dialog_lines = lines
 	current_line = 0
 	show_choices_after = show_choices
 	final_choices = [good_text, bad_text]
-
-	set_character_name(character_name)
 	_update_text()
 
 func _update_text():
@@ -87,26 +76,44 @@ func _update_text():
 
 	var current_entry = dialog_lines[current_line]
 
-	# Se for um dicionário com "name" e "text"
 	if typeof(current_entry) == TYPE_DICTIONARY:
-		set_character_name(current_entry.get("name", ""))
-		_start_typewriter(current_entry.get("text", ""))
+		var name = current_entry.get("name", "")
+		var text = current_entry.get("text", "[font_size=20]")
+		var color = current_entry.get("color", Color.WHITE)
+		_start_typewriter_rich(name, text, color)
+
 	else:
-		# Se for só texto
-		_start_typewriter(str(current_entry))
+		_start_typewriter_rich("", str(current_entry), "#FFFFFF")
 
+func _start_typewriter_rich(name: String, text: String, color: Color) -> void:
+	dialog_text.clear()
+	dialog_text.visible_characters = 0
+	skip_typewriter = false
+	is_typing = true
 
-func _start_typewriter(text: String) -> void:
-	dialog_text.text = ""
-	var char_index = 0
+	var full_text = ""
+	if name != "":
+		full_text += "[font_size=20][color=" + color.to_html(false) + "][b]" + name + ":[/b][/color] "
+	full_text += text
 
-	while char_index < text.length():
-		dialog_text.text += text[char_index]
-		char_index += 1
+	dialog_text.bbcode_enabled = true
+	dialog_text.append_text(full_text)
+
+	var total_chars = dialog_text.get_total_character_count()
+	for i in range(total_chars + 1):
+		# Se o jogador quiser saltar a escrita, mostra tudo imediatamente
+		if skip_typewriter:
+			dialog_text.visible_characters = total_chars
+			break
+
+		dialog_text.visible_characters = i
 		await get_tree().create_timer(0.03).timeout
 
+	is_typing = false
 	continue_label.visible = true
 	can_continue = true
+
+
 
 func _process(_delta):
 	if choosing:
@@ -119,26 +126,28 @@ func _process(_delta):
 				_on_good_choice_pressed()
 			else:
 				_on_bad_choice_pressed()
-	elif can_continue and Input.is_action_just_pressed("interact"):
-		current_line += 1
-		if current_line >= dialog_lines.size():
-			if show_choices_after:
-				_show_choices()
+	elif Input.is_action_just_pressed("interact"):
+		if is_typing:
+			skip_typewriter = true
+		elif can_continue:
+			current_line += 1
+			if current_line >= dialog_lines.size():
+				if show_choices_after:
+					_show_choices()
+				else:
+					emit_signal("dialog_finished")
+					queue_free()
 			else:
-				emit_signal("dialog_finished")
-				queue_free()
-		else:
-			_update_text()
+				_update_text()
+
 
 func _show_choices():
-	# Estilo com borda branca e fundo transparente (botão selecionado)
-	border_style.set_border_width_all(1)
-	border_style.border_color = Color(1, 1, 1)
-	border_style.bg_color = Color(0, 0, 0, 0)  # fundo totalmente transparente
+	border_style.set_border_width_all(0)
+	border_style.border_color = Color.WHITE
+	border_style.bg_color = Color(0, 0, 0, 0)
 
-	# Estilo sem borda nem fundo (botão não selecionado)
 	empty_style.set_border_width_all(0)
-	empty_style.bg_color = Color(0, 0, 0, 0)  # também transparente
+	empty_style.bg_color = Color(0, 0, 0, 0)
 
 	continue_label.visible = false
 	can_continue = false
@@ -150,23 +159,17 @@ func _show_choices():
 	_update_choice_highlight()
 	choosing = true
 
-
 func _update_choice_highlight():
-	var white = Color(1, 1, 1)
-
+	var white = Color.WHITE
 	good_choice_button.add_theme_color_override("font_color", white)
 	bad_choice_button.add_theme_color_override("font_color", white)
 
 	var is_good_selected = selected_choice == 0
+	good_choice_button.text = ("→ " + final_choices[0] + " ←") if is_good_selected else final_choices[0]
+	bad_choice_button.text = ("→ " + final_choices[1] + " ←") if not is_good_selected else final_choices[1]
 
-	# Atualizar texto com seta apenas no botão selecionado
-	good_choice_button.text = ("→ " if is_good_selected else "") + final_choices[0]
-	bad_choice_button.text = ("" if is_good_selected else "→ ") + final_choices[1]
-
-	# Atualizar estilo da borda (opcional, se quiseres manter a borda branca)
 	good_choice_button.add_theme_stylebox_override("normal", border_style if is_good_selected else empty_style)
 	bad_choice_button.add_theme_stylebox_override("normal", border_style if not is_good_selected else empty_style)
-
 
 func _on_good_choice_pressed():
 	emit_signal("choice_made", 0)
