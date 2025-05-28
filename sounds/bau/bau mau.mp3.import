@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://4o10il5q8x3n"
+path="res://.godot/imported/bau mau.mp3-fe24c490d541d4c60f147b0cfcada9a2.mp3str"
+
+[deps]
+
+source_file="res://sounds/bau/bau mau.mp3"
+dest_files=["res://.godot/imported/bau mau.mp3-fe24c490d541d4c60f147b0cfcada9a2.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

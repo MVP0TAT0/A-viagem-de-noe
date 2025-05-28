@@ -28,8 +28,8 @@ func interact():
 
 func show_nothing_happens_dialog():
 	GameState.show_dialog_sequence([
-		"A minha estante...", 
-		"Aqui guardo tudo de mais importante para mim."
+		{"name": "Noé", "text": "A minha estante...", "color": GameState.cores["noé"]}, 
+		{"name": "Noé", "text": "Representa-me bem, parte é meu, parte é dela...", "color": GameState.cores["noé"]}
 		], false, "", "", self, "_on_nothing_dialog_finished")
 
 func _on_nothing_dialog_finished(_choice = 0):

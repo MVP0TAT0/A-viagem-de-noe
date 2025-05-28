@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://db6gpr4u7umej"
+path="res://.godot/imported/quarto -2.mp3-8bc41c5302a8210b3112c191724f74de.mp3str"
+
+[deps]
+
+source_file="res://sounds/quarto/quarto -2.mp3"
+dest_files=["res://.godot/imported/quarto -2.mp3-8bc41c5302a8210b3112c191724f74de.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

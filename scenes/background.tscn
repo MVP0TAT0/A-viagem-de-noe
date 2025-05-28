@@ -1,7 +1,9 @@
 [gd_scene load_steps=3 format=3 uid="uid://bjy36wweley6d"]
 
 [ext_resource type="Script" uid="uid://c80u7nacgkb5l" path="res://scripts/background.gd" id="1_srd7j"]
-[ext_resource type="Texture2D" uid="uid://bqx26wp5b6tvl" path="res://assets/Background/Background.png" id="1_thrka"]
+
+[sub_resource type="Resource" id="Resource_bkp1e"]
+metadata/__load_path__ = "res://assets/Background/Background.png"
 
 [node name="bg" type="Control"]
 layout_mode = 3
@@ -19,4 +21,4 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_thrka")
+texture = SubResource("Resource_bkp1e")

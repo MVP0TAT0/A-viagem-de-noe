@@ -1,12 +1,46 @@
-[gd_scene load_steps=9 format=3 uid="uid://dopf1ywqe34kl"]
+[gd_scene load_steps=21 format=3 uid="uid://dopf1ywqe34kl"]
 
 [ext_resource type="Script" path="res://scripts/window_level.gd" id="1_75wce"]
-[ext_resource type="Texture2D" uid="uid://cm7dgxsyexpbl" path="res://assets/ViagemDeNoe/janela_bg.png" id="2_ho4wc"]
+[ext_resource type="Texture2D" uid="uid://1up7i8to6t73" path="res://assets/ViagemDeNoe/janela_bg.png" id="2_ho4wc"]
 [ext_resource type="PackedScene" uid="uid://b81xyootrnoab" path="res://scenes/player.tscn" id="3_c3trb"]
+[ext_resource type="Texture2D" uid="uid://qrk8rvno7gde" path="res://assets/ViagemDeNoe/animation/solidão/solidao_0.png" id="3_keqvo"]
+[ext_resource type="Texture2D" uid="uid://b1ntffb08dub5" path="res://assets/ViagemDeNoe/animation/solidão/solidao_1.png" id="4_cwvyv"]
+[ext_resource type="Script" path="res://scripts/int_1.gd" id="4_dbg1d"]
 [ext_resource type="Script" path="res://scripts/window_trigger.gd" id="4_qqcrs"]
-[ext_resource type="AudioStream" uid="uid://bhc1nopffgd5d" path="res://sounds/window_vozes.mp3" id="5_vwxt0"]
+[ext_resource type="Texture2D" uid="uid://cv4gk55xrxtfr" path="res://assets/ViagemDeNoe/animation/solidão/solidao_2.png" id="5_68evj"]
+[ext_resource type="AudioStream" uid="uid://0rtjp302hfs" path="res://sounds/janela/audiosjuntosjanela.mp3" id="5_v88nx"]
+[ext_resource type="Texture2D" uid="uid://dn3rprjqa702o" path="res://assets/ViagemDeNoe/animation/solidão/solidao_3.png" id="6_kvspd"]
 [ext_resource type="Texture2D" uid="uid://b7u06mi8odicl" path="res://assets/ViagemDeNoe/coluna_1.png" id="6_pf26i"]
+[ext_resource type="Texture2D" uid="uid://bsn7af4b4y7fi" path="res://assets/ViagemDeNoe/animation/solidão/solidao_4.png" id="7_hs6v4"]
 [ext_resource type="Texture2D" uid="uid://be65sks04p3cb" path="res://assets/ViagemDeNoe/coluna_2.png" id="7_sqktd"]
+[ext_resource type="AudioStream" uid="uid://dp34nudea6chj" path="res://sounds/janela/juntoscorreto.mp3" id="8_37aaa"]
+[ext_resource type="Script" path="res://scripts/animacao_olhos.gd" id="8_ggqqj"]
+[ext_resource type="Script" path="res://scripts/int_2.gd" id="9_mkswl"]
+[ext_resource type="Script" path="res://scripts/int_3.gd" id="10_ex73j"]
+[ext_resource type="Script" path="res://scripts/int_5.gd" id="11_3u1lx"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ax17l"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_keqvo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_cwvyv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_68evj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_kvspd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_hs6v4")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u423m"]
 size = Vector2(101, 80)
@@ -15,33 +49,38 @@ size = Vector2(101, 80)
 script = ExtResource("1_75wce")
 
 [node name="Background" type="Sprite2D" parent="."]
-position = Vector2(1934, 538)
-scale = Vector2(1.135, 1.135)
+position = Vector2(1944, 538)
+scale = Vector2(1.015, 1.015)
 texture = ExtResource("2_ho4wc")
 
+[node name="olhos" type="AnimatedSprite2D" parent="."]
+position = Vector2(1918, 534)
+sprite_frames = SubResource("SpriteFrames_ax17l")
+script = ExtResource("8_ggqqj")
+
 [node name="Player" parent="." instance=ExtResource("3_c3trb")]
-position = Vector2(344, 890)
+position = Vector2(113, 825)
 max_x = 3910
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
+position = Vector2(0, 62)
 offset = Vector2(0, -352)
 limit_left = 0
 limit_right = 3870
 editor_draw_limits = true
 
-[node name="Area2D" type="Area2D" parent="."]
-position = Vector2(3017, 795)
+[node name="Int1" type="Area2D" parent="."]
+position = Vector2(499, 803)
 collision_mask = 2
-script = ExtResource("4_qqcrs")
+script = ExtResource("4_dbg1d")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Int1"]
 position = Vector2(0, 1)
 shape = SubResource("RectangleShape2D_u423m")
 
 [node name="BackgroundMusic" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("5_vwxt0")
+stream = ExtResource("5_v88nx")
 autoplay = true
-parameters/looping = true
 
 [node name="coluna_1" type="Sprite2D" parent="."]
 position = Vector2(873, 538)
@@ -49,6 +88,7 @@ scale = Vector2(1.135, 1.135)
 texture = ExtResource("6_pf26i")
 
 [node name="coluna_2" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(2564, 538)
 scale = Vector2(1.135, 1.135)
 texture = ExtResource("7_sqktd")
@@ -58,9 +98,50 @@ modulate = Color(1, 1, 1, 0)
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = 2490.0
-offset_bottom = 1080.0
+offset_left = -185.0
+offset_top = -213.0
+offset_right = 2305.0
+offset_bottom = 867.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(1.56542, 1.03172)
+scale = Vector2(1.72323, 1.40753)
 color = Color(0, 0, 0, 1)
+
+[node name="AudioPlayer" type="AudioStreamPlayer" parent="FadeRect"]
+stream = ExtResource("8_37aaa")
+
+[node name="Int2" type="Area2D" parent="."]
+position = Vector2(1237, 803)
+collision_mask = 2
+script = ExtResource("9_mkswl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Int2"]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_u423m")
+
+[node name="Int3" type="Area2D" parent="."]
+position = Vector2(2625, 784)
+collision_mask = 2
+script = ExtResource("10_ex73j")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Int3"]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_u423m")
+
+[node name="Int5" type="Area2D" parent="."]
+position = Vector2(2042, 784)
+collision_mask = 2
+script = ExtResource("11_3u1lx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Int5"]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_u423m")
+
+[node name="IntFinal" type="Area2D" parent="."]
+position = Vector2(3323, 803)
+collision_mask = 2
+script = ExtResource("4_qqcrs")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="IntFinal"]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_u423m")

@@ -28,8 +28,9 @@ func interact():
 
 func show_nothing_happens_dialog():
 	GameState.show_dialog_sequence([
-		"A minha cama...", 
-		"Aqui é onde passo a maior parte dos meus dias..."
+		{"name": "Noé", "text": "A minha cama...", "color": GameState.cores["noé"]},
+		{"name": "Noé", "text": "Antigamente fazia-me lembrar dos chás de camomila que ela me fazia em criança quando eu não conseguia dormir.", "color": GameState.cores["noé"]},
+		{"name": "Noé", "text": "Agora... algo que deveria ser sinónimo de descanso, só me faz pensar nos últimos dias dela...", "color": GameState.cores["noé"]}
 		], false, "", "", self, "_on_nothing_dialog_finished")
 
 func _on_nothing_dialog_finished(_choice = 0):

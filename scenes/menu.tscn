@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://b7mmgxtwgqwnx"]
+[gd_scene load_steps=4 format=3 uid="uid://b7mmgxtwgqwnx"]
 
-[ext_resource type="Script" path="res://scripts/menu.gd" id="1_yqeox"]
+[ext_resource type="Script" uid="uid://dhkc8llljgtl0" path="res://scripts/menu.gd" id="1_yqeox"]
+[ext_resource type="AudioStream" uid="uid://bcx2hduye6kl1" path="res://sounds/fins e menu/menu.mp3" id="2_vjb58"]
+[ext_resource type="Texture2D" uid="uid://dmxkfqfeykavh" path="res://assets/ViagemDeNoe/Menu.png" id="2_wmwbt"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -11,41 +13,49 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_yqeox")
 
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(954.202, 542)
+scale = Vector2(0.241249, 0.241249)
+texture = ExtResource("2_wmwbt")
+
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 0
-offset_left = 2.0
-offset_right = 42.0
-offset_bottom = 40.0
+offset_left = -12.0
+offset_top = 4.0
+offset_right = 29.0
+offset_bottom = 12.0
 scale = Vector2(48.0496, 26.8331)
-color = Color(0.750179, 0.737989, 0.670509, 1)
+color = Color(0.560784, 0.619608, 0.580392, 1)
 
 [node name="Título" type="Label" parent="."]
 layout_mode = 0
-offset_left = 182.0
-offset_top = 56.0
-offset_right = 1740.0
-offset_bottom = 302.0
+offset_left = -128.0
+offset_top = -20.0
+offset_right = 1430.0
+offset_bottom = 226.0
+theme_override_colors/font_color = Color(0.988235, 0.952941, 0.847059, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_constants/shadow_offset_x = 5
-theme_override_constants/shadow_offset_y = 2
-theme_override_constants/outline_size = 2
-theme_override_constants/shadow_outline_size = 5
-theme_override_font_sizes/font_size = 180
-text = "A VIAGEM DE NOÉ"
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 1
+theme_override_constants/outline_size = 1
+theme_override_constants/shadow_outline_size = 2
+theme_override_font_sizes/font_size = 120
+text = "A Viagem de Noé"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Seta" type="Label" parent="."]
 layout_mode = 0
 offset_left = 186.0
-offset_top = 475.0
+offset_top = 479.0
 offset_right = 232.0
-offset_bottom = 585.0
+offset_bottom = 589.0
+theme_override_colors/font_color = Color(0.670588, 0.396078, 0.364706, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_constants/shadow_offset_x = 5
-theme_override_constants/shadow_offset_y = 2
-theme_override_constants/outline_size = 2
-theme_override_constants/shadow_outline_size = 5
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 1
+theme_override_constants/outline_size = 1
+theme_override_constants/shadow_outline_size = 2
 theme_override_font_sizes/font_size = 80
 text = ">"
 
@@ -54,52 +64,27 @@ layout_mode = 0
 offset_left = 106.0
 offset_right = 304.0
 offset_bottom = 110.0
+theme_override_colors/font_color = Color(0.670588, 0.396078, 0.364706, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_constants/shadow_offset_x = 5
-theme_override_constants/shadow_offset_y = 2
-theme_override_constants/outline_size = 2
-theme_override_constants/shadow_outline_size = 5
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 1
+theme_override_constants/outline_size = 1
+theme_override_constants/shadow_outline_size = 2
 theme_override_font_sizes/font_size = 80
 text = "Jogar"
-
-[node name="Seta2" type="Label" parent="."]
-layout_mode = 0
-offset_left = 186.0
-offset_top = 616.0
-offset_right = 232.0
-offset_bottom = 726.0
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_constants/shadow_offset_x = 5
-theme_override_constants/shadow_offset_y = 2
-theme_override_constants/outline_size = 2
-theme_override_constants/shadow_outline_size = 5
-theme_override_font_sizes/font_size = 80
-text = ">"
-
-[node name="Como Jogar" type="Label" parent="Seta2"]
-layout_mode = 0
-offset_left = 106.0
-offset_right = 304.0
-offset_bottom = 110.0
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_constants/shadow_offset_x = 5
-theme_override_constants/shadow_offset_y = 2
-theme_override_constants/outline_size = 2
-theme_override_constants/shadow_outline_size = 5
-theme_override_font_sizes/font_size = 80
-text = "Como Jogar"
 
 [node name="Seta3" type="Label" parent="."]
 layout_mode = 0
 offset_left = 186.0
-offset_top = 765.0
+offset_top = 613.0
 offset_right = 232.0
-offset_bottom = 875.0
+offset_bottom = 723.0
+theme_override_colors/font_color = Color(0.670588, 0.396078, 0.364706, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_constants/shadow_offset_x = 5
-theme_override_constants/shadow_offset_y = 2
-theme_override_constants/outline_size = 2
-theme_override_constants/shadow_outline_size = 5
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 1
+theme_override_constants/outline_size = 1
+theme_override_constants/shadow_outline_size = 2
 theme_override_font_sizes/font_size = 80
 text = ">"
 
@@ -108,10 +93,16 @@ layout_mode = 0
 offset_left = 106.0
 offset_right = 304.0
 offset_bottom = 110.0
+theme_override_colors/font_color = Color(0.670588, 0.396078, 0.364706, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_constants/shadow_offset_x = 5
-theme_override_constants/shadow_offset_y = 2
-theme_override_constants/outline_size = 2
-theme_override_constants/shadow_outline_size = 5
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 1
+theme_override_constants/outline_size = 1
+theme_override_constants/shadow_outline_size = 2
 theme_override_font_sizes/font_size = 80
 text = "Sair"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_vjb58")
+autoplay = true
+parameters/looping = true
