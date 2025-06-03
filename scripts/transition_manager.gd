@@ -1,12 +1,9 @@
 extends CanvasLayer
 
-@onready var fade_rect: ColorRect = $ColorRect
 @export var fade_time := 1.5
 
 func start_transition(target_scene_path: String):
-	fade_rect.modulate.a = 0.0
 	var tween = create_tween()
-	tween.tween_property(fade_rect, "modulate:a", 1.0, fade_time)
 	tween.tween_callback(Callable(self, "_on_fade_out_complete").bind(target_scene_path))
 
 func _on_fade_out_complete(target_scene_path: String):
@@ -20,7 +17,6 @@ func _on_fade_out_complete(target_scene_path: String):
 		new_fade.modulate.a = 1.0
 
 	var tween = create_tween()
-	tween.tween_property(fade_rect, "modulate:a", 0.0, fade_time)
 	tween.tween_callback(Callable(self, "_on_fade_complete"))
 
 func _on_fade_complete():

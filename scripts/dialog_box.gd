@@ -110,8 +110,17 @@ func _start_typewriter_rich(name: String, text: String, color: Color) -> void:
 		await get_tree().create_timer(0.03).timeout
 
 	is_typing = false
-	continue_label.visible = true
-	can_continue = true
+
+	var is_last_line = current_line == dialog_lines.size() - 1
+
+	if show_choices_after and is_last_line:
+		# Última linha antes da escolha: salta o continue label e mostra já as escolhas
+		_show_choices()
+	else:
+		continue_label.visible = true
+		can_continue = true
+
+
 
 
 
