@@ -1,9 +1,73 @@
-[gd_scene load_steps=5 format=3 uid="uid://b7mmgxtwgqwnx"]
+[gd_scene load_steps=20 format=3 uid="uid://b7mmgxtwgqwnx"]
 
 [ext_resource type="Script" path="res://scripts/menu.gd" id="1_yqeox"]
+[ext_resource type="Texture2D" uid="uid://dkq5fw636o86s" path="res://assets/ViagemDeNoe/animation/menu/menu (1).png" id="2_akwad"]
 [ext_resource type="AudioStream" uid="uid://bcx2hduye6kl1" path="res://sounds/fins e menu/menu.mp3" id="2_vjb58"]
 [ext_resource type="Texture2D" uid="uid://dmxkfqfeykavh" path="res://assets/ViagemDeNoe/Menu.png" id="2_wmwbt"]
-[ext_resource type="FontFile" uid="uid://cimm5ciwugig4" path="res://fonts/Lapture_Bold.ttf" id="3_w5o01"]
+[ext_resource type="Texture2D" uid="uid://cyyjh10wixveu" path="res://assets/ViagemDeNoe/animation/menu/menu (2).png" id="3_2dpp7"]
+[ext_resource type="Texture2D" uid="uid://brxhj7at3r285" path="res://assets/ViagemDeNoe/animation/menu/menu (3).png" id="4_o4402"]
+[ext_resource type="Texture2D" uid="uid://bj5lq3xdhxyee" path="res://assets/ViagemDeNoe/animation/menu/menu (4).png" id="5_ifk45"]
+[ext_resource type="Texture2D" uid="uid://blomta2k8ovd5" path="res://assets/ViagemDeNoe/animation/menu/menu (5).png" id="6_8qgt2"]
+[ext_resource type="Texture2D" uid="uid://647uaw20dsif" path="res://assets/ViagemDeNoe/animation/menu/menu (6).png" id="7_a11fw"]
+[ext_resource type="Texture2D" uid="uid://brk1b8r2rax1q" path="res://assets/ViagemDeNoe/animation/menu/menu (7).png" id="8_qojw6"]
+[ext_resource type="Texture2D" uid="uid://bey5fo3r5hqf6" path="res://assets/ViagemDeNoe/animation/menu/menu (8).png" id="9_2322a"]
+[ext_resource type="Texture2D" uid="uid://cpuib52arv343" path="res://assets/ViagemDeNoe/animation/menu/menu (9).png" id="10_qvcr7"]
+[ext_resource type="Texture2D" uid="uid://sm5xo1d5s8tv" path="res://assets/ViagemDeNoe/animation/menu/menu (10).png" id="11_go4vr"]
+[ext_resource type="Texture2D" uid="uid://bo40afymbc2dq" path="res://assets/ViagemDeNoe/animation/menu/menu (11).png" id="12_rt7yg"]
+[ext_resource type="Texture2D" uid="uid://d1d22swbiqlr5" path="res://assets/ViagemDeNoe/animation/menu/menu (12).png" id="13_3ufhs"]
+[ext_resource type="Texture2D" uid="uid://dtowh7dohj5x8" path="res://assets/ViagemDeNoe/animation/menu/menu (13).png" id="14_rnbo3"]
+[ext_resource type="Texture2D" uid="uid://r251vnvv04fp" path="res://assets/ViagemDeNoe/animation/menu/menu (14).png" id="15_elhlb"]
+[ext_resource type="FontFile" uid="uid://dxjo67e5i4pmr" path="res://fonts/IMFellDWPica-Regular.ttf" id="17_r0fab"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2w6ct"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_akwad")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_2dpp7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_o4402")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_ifk45")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_8qgt2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_a11fw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_qojw6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_2322a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_qvcr7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_go4vr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_rt7yg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_3ufhs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_rnbo3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_elhlb")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -14,12 +78,19 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_yqeox")
 
+[node name="bg" type="AnimatedSprite2D" parent="."]
+position = Vector2(960, 540)
+sprite_frames = SubResource("SpriteFrames_2w6ct")
+autoplay = "default"
+
 [node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(954.202, 542)
 scale = Vector2(0.241249, 0.241249)
 texture = ExtResource("2_wmwbt")
 
 [node name="ColorRect" type="ColorRect" parent="."]
+visible = false
 layout_mode = 0
 offset_left = -12.0
 offset_top = 4.0
@@ -29,6 +100,7 @@ scale = Vector2(48.0496, 26.8331)
 color = Color(0.560784, 0.619608, 0.580392, 1)
 
 [node name="Título" type="Label" parent="."]
+visible = false
 layout_mode = 0
 offset_left = -128.0
 offset_top = -20.0
@@ -46,64 +118,51 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Seta" type="Label" parent="."]
-layout_mode = 0
-offset_left = 186.0
-offset_top = 479.0
-offset_right = 232.0
-offset_bottom = 589.0
-theme_override_colors/font_color = Color(0.670588, 0.396078, 0.364706, 1)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_constants/shadow_offset_x = 3
-theme_override_constants/shadow_offset_y = 1
+modulate = Color(1.2, 1.2, 1.2, 1)
+offset_left = 632.0
+offset_top = 567.0
+offset_right = 678.0
+offset_bottom = 794.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 1
-theme_override_constants/shadow_outline_size = 2
-theme_override_fonts/font = ExtResource("3_w5o01")
+theme_override_fonts/font = ExtResource("17_r0fab")
 theme_override_font_sizes/font_size = 80
 text = ">"
 
 [node name="Jogar" type="Label" parent="Seta"]
+modulate = Color(1.2, 1.2, 1.2, 1)
 layout_mode = 0
-offset_left = 106.0
-offset_right = 304.0
-offset_bottom = 110.0
-theme_override_colors/font_color = Color(0.670588, 0.396078, 0.364706, 1)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_constants/shadow_offset_x = 3
-theme_override_constants/shadow_offset_y = 1
+offset_left = 63.0
+offset_right = 321.0
+offset_bottom = 167.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 1
-theme_override_constants/shadow_outline_size = 2
-theme_override_fonts/font = ExtResource("3_w5o01")
+theme_override_fonts/font = ExtResource("17_r0fab")
 theme_override_font_sizes/font_size = 80
 text = "Jogar"
 
 [node name="Seta3" type="Label" parent="."]
+modulate = Color(1.2, 1.2, 1.2, 1)
 layout_mode = 0
-offset_left = 186.0
-offset_top = 613.0
-offset_right = 232.0
-offset_bottom = 723.0
-theme_override_colors/font_color = Color(0.670588, 0.396078, 0.364706, 1)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_constants/shadow_offset_x = 3
-theme_override_constants/shadow_offset_y = 1
+offset_left = 1027.0
+offset_top = 567.0
+offset_right = 1073.0
+offset_bottom = 750.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 1
-theme_override_constants/shadow_outline_size = 2
-theme_override_fonts/font = ExtResource("3_w5o01")
+theme_override_fonts/font = ExtResource("17_r0fab")
 theme_override_font_sizes/font_size = 80
 text = ">"
 
 [node name="Sair" type="Label" parent="Seta3"]
+modulate = Color(1.2, 1.2, 1.2, 1)
 layout_mode = 0
-offset_left = 106.0
-offset_right = 304.0
-offset_bottom = 110.0
-theme_override_colors/font_color = Color(0.670588, 0.396078, 0.364706, 1)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_constants/shadow_offset_x = 3
-theme_override_constants/shadow_offset_y = 1
+offset_left = 64.0
+offset_right = 262.0
+offset_bottom = 178.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 1
-theme_override_constants/shadow_outline_size = 2
-theme_override_fonts/font = ExtResource("3_w5o01")
+theme_override_fonts/font = ExtResource("17_r0fab")
 theme_override_font_sizes/font_size = 80
 text = "Sair"
 

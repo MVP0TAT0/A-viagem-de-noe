@@ -23,14 +23,31 @@ func _process(_delta):
 		interact()
 
 func interact():
-	show_nothing_happens_dialog()
-
-func show_nothing_happens_dialog():
-	GameState.show_dialog_sequence([
-		{"name": "Noé", "text": "A minha estante...", "color": GameState.cores["noé"]}, 
-		{"name": "Noé", "text": "Representa-me bem, parte é meu, parte é dela...", "color": GameState.cores["noé"]}
+	if GameState.puzzle_joias_completo:
+		GameState.show_dialog_sequence(
+			[
+				{"name": "Noé", "text": "A minha estante...", "color": GameState.cores["noé"]},
+				{"name": "Noé", "text": "Representa-me bem. Parte é minha, parte é dela...", "color": GameState.cores["noé"]},
+			],
+			false, "", "", null, ""
+		)
+	else:
+		GameState.show_dialog_sequence([
+			{"name": "Noé", "text": "...!", "color": GameState.cores["noé"]},
+			{"name": "Noé", "text": "A caixa das jóias favoritas dela...", "color": GameState.cores["noé"]},
+			{"name": "Noé", "text": "Se ela visse isto assim, ficaria... desapontada.", "color": GameState.cores["noé"]},
+			{"name": "Noé", "text": "Sempre teve um cuidado quase ritual com a ordem das coisas.", "color": GameState.cores["noé"]},
+			{"name": "Noé", "text": "Ela dizia sempre que cada peça tinha um lugar, e cada lugar tinha um significado...", "color": GameState.cores["noé"]}
 		], false, "", "", self, "_on_nothing_dialog_finished")
 
 func _on_nothing_dialog_finished(_choice = 0):
-	# Só serve para fechar o diálogo
-	pass
+	GameState.movement_locked = true  # Impede o jogador de se mexer
+	GameState.interaction_locked = true  # Impede novas interações
+
+	var puzzle_scene = preload("res://scenes/puzzle.tscn")
+	var puzzle_instance = puzzle_scene.instantiate()
+
+	var puzzle_container = get_node("../PuzzleContainer")
+	puzzle_container.add_child(puzzle_instance)
+
+	puzzle_instance.mostrar_caixa()
