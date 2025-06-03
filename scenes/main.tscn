@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://dcaxmy6pw8dgm"]
+[gd_scene load_steps=44 format=3 uid="uid://dcaxmy6pw8dgm"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_o4fj4"]
 [ext_resource type="Texture2D" uid="uid://b2axx64b61eue" path="res://assets/ViagemDeNoe/quarto.png" id="2_uivf1"]
@@ -33,6 +33,7 @@
 [ext_resource type="Texture2D" uid="uid://wbf6wiah05er" path="res://assets/ViagemDeNoe/animation/noe_walk/walk_7.png" id="19_q6wne"]
 [ext_resource type="Texture2D" uid="uid://cquwg3ngs17hm" path="res://assets/ViagemDeNoe/animation/noe_walk/walk_8.png" id="20_oq1y8"]
 [ext_resource type="Texture2D" uid="uid://bc0h87c1xpg5g" path="res://assets/ViagemDeNoe/animation/noe_walk/walk_9.png" id="21_ub7lt"]
+[ext_resource type="PackedScene" uid="uid://c82lsht2u8sbd" path="res://scenes/puzzle.tscn" id="31_64qqj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ao8pf"]
 size = Vector2(5067.48, 1791.16)
@@ -220,6 +221,11 @@ shape = SubResource("RectangleShape2D_qgxrf")
 [node name="Player" parent="." instance=ExtResource("9_85g3d")]
 position = Vector2(449, 776)
 max_x = 1900
+
+[node name="PuzzleContainer" type="Node2D" parent="."]
+unique_name_in_owner = true
+
+[node name="Puzzle" parent="PuzzleContainer" instance=ExtResource("31_64qqj")]
 
 [node name="DarkOverlay" type="ColorRect" parent="."]
 z_index = 5

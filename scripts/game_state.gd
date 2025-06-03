@@ -32,6 +32,8 @@ var cores := {
 	"outro": Color("#A5A5A5")
 }
 
+var puzzle_joias_completo := false
+
 func get_prompt():
 	var scene = get_tree().get_current_scene()
 	if scene.has_node("Player/Noé/Label"):
@@ -107,3 +109,5 @@ func reset_game_state():
 	movement_locked = false
 	
 	intro_bedroom_dialog_shown = false
+	
+	puzzle_joias_completo = false

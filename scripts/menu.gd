@@ -12,10 +12,10 @@ func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 
 func _process(delta):
-	if Input.is_action_just_pressed("ui_down") and current_selection < 1:
+	if Input.is_action_just_pressed("ui_right") and current_selection < 1:
 		current_selection += 1
 		set_current_selection(current_selection)
-	elif Input.is_action_just_pressed("ui_up") and current_selection > 0:
+	elif Input.is_action_just_pressed("ui_left") and current_selection > 0:
 		current_selection -= 1
 		set_current_selection(current_selection)
 	elif Input.is_action_just_pressed("interact"):

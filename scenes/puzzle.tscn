@@ -1,0 +1,172 @@
+[gd_scene load_steps=23 format=3 uid="uid://c82lsht2u8sbd"]
+
+[ext_resource type="Script" path="res://scripts/puzzle.gd" id="1_uoura"]
+[ext_resource type="Texture2D" uid="uid://cq7kvx1q0nfmy" path="res://assets/ViagemDeNoe/caixa_joias.png" id="2_j4q4i"]
+[ext_resource type="Texture2D" uid="uid://c20dqk0ptvr4p" path="res://assets/ViagemDeNoe/joias/joia1.png" id="3_mh7wq"]
+[ext_resource type="Texture2D" uid="uid://dwsyndnjv4cqw" path="res://assets/ViagemDeNoe/joias/joia2.png" id="4_7yudl"]
+[ext_resource type="Texture2D" uid="uid://buuxv0h8fxu5e" path="res://assets/ViagemDeNoe/joias/joia3.png" id="5_ket66"]
+[ext_resource type="Texture2D" uid="uid://bfy3heijksqgq" path="res://assets/ViagemDeNoe/joias/joia4.png" id="6_ej127"]
+[ext_resource type="Texture2D" uid="uid://bn7oe2ffrtudk" path="res://assets/ViagemDeNoe/joias/joia5.png" id="7_n3qu0"]
+[ext_resource type="Texture2D" uid="uid://dnc0lvfqc5onj" path="res://assets/ViagemDeNoe/joias/joia6.png" id="8_vr477"]
+[ext_resource type="Texture2D" uid="uid://b86fjqjx212lr" path="res://assets/ViagemDeNoe/joias/joia7.png" id="9_n3102"]
+[ext_resource type="Texture2D" uid="uid://dams0nlon1duw" path="res://assets/ViagemDeNoe/joias/joia8.png" id="10_ph8ml"]
+[ext_resource type="Texture2D" uid="uid://bblwx85i8hpru" path="res://assets/ViagemDeNoe/joias/joia9.png" id="11_q5pto"]
+[ext_resource type="Texture2D" uid="uid://c0voljhcbt8wu" path="res://assets/ViagemDeNoe/joias/joia10.png" id="12_0t5w4"]
+[ext_resource type="Texture2D" uid="uid://egdvqor6cuj0" path="res://assets/ViagemDeNoe/joias/joia11.png" id="13_eje76"]
+[ext_resource type="Texture2D" uid="uid://dt6kcxmyoglls" path="res://assets/ViagemDeNoe/joias/joia12.png" id="14_vvp01"]
+[ext_resource type="Texture2D" uid="uid://deqsenirisi1j" path="res://assets/ViagemDeNoe/joias/joia13.png" id="15_5yvwj"]
+[ext_resource type="Texture2D" uid="uid://cyig7ws7ljluq" path="res://assets/ViagemDeNoe/joias/joia14.png" id="16_ewfei"]
+[ext_resource type="Texture2D" uid="uid://c27cpiwmc4ing" path="res://assets/ViagemDeNoe/joias/joia15.png" id="17_s84m8"]
+[ext_resource type="Texture2D" uid="uid://cmt86fjatm0o1" path="res://assets/ViagemDeNoe/joias/joia16.png" id="18_ow0qo"]
+[ext_resource type="Texture2D" uid="uid://iysfbgqrhokx" path="res://assets/ViagemDeNoe/joias/joia17.png" id="19_0mk7d"]
+[ext_resource type="Texture2D" uid="uid://jkec4yqwqq8v" path="res://assets/ViagemDeNoe/joias/joia18.png" id="20_yya5h"]
+[ext_resource type="Texture2D" uid="uid://bptnh5ck8p5w1" path="res://assets/ViagemDeNoe/joias/joia19.png" id="21_x048y"]
+[ext_resource type="Texture2D" uid="uid://sa60vwiu33nb" path="res://assets/ViagemDeNoe/joias/joia20.png" id="22_fduym"]
+
+[node name="Puzzle" type="Node2D"]
+script = ExtResource("1_uoura")
+
+[node name="Caixa" type="Sprite2D" parent="."]
+position = Vector2(960, 540)
+texture = ExtResource("2_j4q4i")
+
+[node name="Joia1" type="Sprite2D" parent="Caixa"]
+position = Vector2(714, -106)
+texture = ExtResource("3_mh7wq")
+
+[node name="Joia2" type="Sprite2D" parent="Caixa"]
+position = Vector2(-835, -224)
+texture = ExtResource("4_7yudl")
+
+[node name="Joia3" type="Sprite2D" parent="Caixa"]
+position = Vector2(858, -213)
+texture = ExtResource("5_ket66")
+
+[node name="Joia4" type="Sprite2D" parent="Caixa"]
+position = Vector2(705, 157)
+scale = Vector2(2.885, 2.885)
+texture = ExtResource("6_ej127")
+
+[node name="Joia5" type="Sprite2D" parent="Caixa"]
+position = Vector2(-687, 34)
+texture = ExtResource("7_n3qu0")
+
+[node name="Joia6" type="Sprite2D" parent="Caixa"]
+position = Vector2(842, -70)
+texture = ExtResource("8_vr477")
+
+[node name="Joia7" type="Sprite2D" parent="Caixa"]
+position = Vector2(-696, 170)
+texture = ExtResource("9_n3102")
+
+[node name="Joia8" type="Sprite2D" parent="Caixa"]
+position = Vector2(-819, 202)
+texture = ExtResource("10_ph8ml")
+
+[node name="Joia9" type="Sprite2D" parent="Caixa"]
+position = Vector2(837, 285)
+texture = ExtResource("11_q5pto")
+
+[node name="Joia10" type="Sprite2D" parent="Caixa"]
+position = Vector2(-705, -211)
+texture = ExtResource("12_0t5w4")
+
+[node name="Joia11" type="Sprite2D" parent="Caixa"]
+position = Vector2(-819, 309)
+texture = ExtResource("13_eje76")
+
+[node name="Joia12" type="Sprite2D" parent="Caixa"]
+position = Vector2(-826, -85)
+texture = ExtResource("14_vvp01")
+
+[node name="Joia13" type="Sprite2D" parent="Caixa"]
+position = Vector2(-824, 29)
+texture = ExtResource("15_5yvwj")
+
+[node name="Joia14" type="Sprite2D" parent="Caixa"]
+position = Vector2(849, 126)
+texture = ExtResource("16_ewfei")
+
+[node name="Joia15" type="Sprite2D" parent="Caixa"]
+position = Vector2(842, 25)
+texture = ExtResource("17_s84m8")
+
+[node name="Joia16" type="Sprite2D" parent="Caixa"]
+position = Vector2(703, 251)
+texture = ExtResource("18_ow0qo")
+
+[node name="Joia17" type="Sprite2D" parent="Caixa"]
+position = Vector2(700, 328)
+texture = ExtResource("19_0mk7d")
+
+[node name="Joia18" type="Sprite2D" parent="Caixa"]
+position = Vector2(-682, -89)
+texture = ExtResource("20_yya5h")
+
+[node name="Joia19" type="Sprite2D" parent="Caixa"]
+position = Vector2(-673, 260)
+texture = ExtResource("21_x048y")
+
+[node name="Joia20" type="Sprite2D" parent="Caixa"]
+position = Vector2(-686, 330)
+texture = ExtResource("22_fduym")
+
+[node name="Lugar1" type="Node2D" parent="Caixa"]
+position = Vector2(-456, 25)
+
+[node name="Lugar2" type="Node2D" parent="Caixa"]
+position = Vector2(-295, -163)
+
+[node name="Lugar3" type="Node2D" parent="Caixa"]
+position = Vector2(-121, -154)
+
+[node name="Lugar4" type="Node2D" parent="Caixa"]
+position = Vector2(51, -149)
+
+[node name="Lugar5" type="Node2D" parent="Caixa"]
+position = Vector2(-294, 21)
+
+[node name="Lugar6" type="Node2D" parent="Caixa"]
+position = Vector2(-127, 31)
+
+[node name="Lugar7" type="Node2D" parent="Caixa"]
+position = Vector2(45, 31)
+
+[node name="Lugar8" type="Node2D" parent="Caixa"]
+position = Vector2(-279, 215)
+
+[node name="Lugar9" type="Node2D" parent="Caixa"]
+position = Vector2(-125, 215)
+
+[node name="Lugar10" type="Node2D" parent="Caixa"]
+position = Vector2(47, 219)
+
+[node name="Lugar11" type="Node2D" parent="Caixa"]
+position = Vector2(324, -198)
+
+[node name="Lugar12" type="Node2D" parent="Caixa"]
+position = Vector2(270, -73)
+
+[node name="Lugar13" type="Node2D" parent="Caixa"]
+position = Vector2(330, -51)
+
+[node name="Lugar14" type="Node2D" parent="Caixa"]
+position = Vector2(419, -76)
+
+[node name="Lugar15" type="Node2D" parent="Caixa"]
+position = Vector2(247, 113)
+
+[node name="Lugar16" type="Node2D" parent="Caixa"]
+position = Vector2(391, 109)
+
+[node name="Lugar17" type="Node2D" parent="Caixa"]
+position = Vector2(246, 189)
+
+[node name="Lugar18" type="Node2D" parent="Caixa"]
+position = Vector2(388, 190)
+
+[node name="Lugar19" type="Node2D" parent="Caixa"]
+position = Vector2(255, 258)
+
+[node name="Lugar20" type="Node2D" parent="Caixa"]
+position = Vector2(392, 258)
