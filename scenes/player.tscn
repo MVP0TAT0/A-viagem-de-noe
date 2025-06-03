@@ -1,20 +1,14 @@
-[gd_scene load_steps=6 format=3 uid="uid://b81xyootrnoab"]
+[gd_scene load_steps=5 format=3 uid="uid://b81xyootrnoab"]
 
-[ext_resource type="Texture2D" uid="uid://kug5l8h4sf5g" path="res://assets/ViagemDeNoe/MC.png" id="1_3vyb7"]
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_g2els"]
-[ext_resource type="Texture2D" uid="uid://c2lhasprh6xhb" path="res://assets/ViagemDeNoe/X-Key.png" id="3_6jxtf"]
 [ext_resource type="SpriteFrames" uid="uid://d1om381a5wbjt" path="res://assets/ViagemDeNoe/animation/player.tres" id="3_n7hoo"]
+[ext_resource type="FontFile" uid="uid://cimm5ciwugig4" path="res://fonts/Lapture_Bold.ttf" id="4_364pt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u8vuu"]
 size = Vector2(19.3646, 120.121)
 
 [node name="Player" type="Node2D"]
 script = ExtResource("1_g2els")
-
-[node name="Noé(sem animação)" type="Sprite2D" parent="."]
-visible = false
-scale = Vector2(0.515, 0.515)
-texture = ExtResource("1_3vyb7")
 
 [node name="Noé" type="AnimatedSprite2D" parent="."]
 position = Vector2(-6, -8)
@@ -23,24 +17,18 @@ sprite_frames = ExtResource("3_n7hoo")
 animation = &"idle"
 autoplay = "idle"
 
-[node name="TextureRect" type="TextureRect" parent="Noé"]
-offset_left = -84.0766
-offset_top = -308.28
-offset_right = 427.923
-offset_bottom = 203.72
-scale = Vector2(0.07, 0.07)
-texture = ExtResource("3_6jxtf")
-
-[node name="Label" type="Label" parent="Noé/TextureRect"]
-layout_mode = 0
-offset_left = 581.778
-offset_top = -83.7975
-offset_right = 3379.78
-offset_bottom = 545.203
+[node name="Label" type="Label" parent="Noé"]
+offset_left = -129.936
+offset_top = -326.115
+offset_right = 1861.06
+offset_bottom = 260.885
+scale = Vector2(0.135, 0.135)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 115
-theme_override_font_sizes/font_size = 461
+theme_override_constants/outline_size = 55
+theme_override_fonts/font = ExtResource("4_364pt")
+theme_override_font_sizes/font_size = 296
 text = "Interagir"
+horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="InteractionArea" type="Area2D" parent="."]

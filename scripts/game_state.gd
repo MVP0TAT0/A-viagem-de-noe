@@ -32,6 +32,12 @@ var cores := {
 	"outro": Color("#A5A5A5")
 }
 
+func get_prompt():
+	var scene = get_tree().get_current_scene()
+	if scene.has_node("Player/Noé/Label"):
+		return scene.get_node("Player/Noé/Label")
+	return null
+
 func show_dialog_sequence(lines, show_choices, good_choice_text, bad_choice_text, target, callback_method):
 	if current_dialog == null:
 		current_dialog = dialog_scene.instantiate()

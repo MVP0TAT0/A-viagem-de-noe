@@ -2,8 +2,6 @@ extends Area2D
 
 var player_inside := false
 
-@onready var prompt = get_tree().get_current_scene().get_node("Player/Noé/TextureRect")
-
 func _ready():
 	connect("area_entered", _on_area_entered)
 	connect("area_exited", _on_area_exited)

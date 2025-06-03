@@ -8,7 +8,7 @@ extends Node2D
 @export var max_x := 2455
 
 func _ready():
-	$Noé/TextureRect.visible = false
+	$"Noé/Label".visible = false
 
 func _process(delta):
 	if GameState.current_dialog != null or GameState.movement_locked:

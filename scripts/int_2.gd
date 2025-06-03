@@ -1,9 +1,7 @@
 extends Area2D
 
 var player_inside := false
-var dialog_shown := false  # <- nova variável
-
-@onready var prompt = get_tree().get_current_scene().get_node("Player/Noé/TextureRect")
+var dialog_shown := false
 
 func _ready():
 	connect("area_entered", _on_area_entered)

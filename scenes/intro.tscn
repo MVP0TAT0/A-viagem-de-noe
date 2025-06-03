@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://jjw3bjodn56o"]
 
-[ext_resource type="Script" uid="uid://bk8ejmdsifcvu" path="res://scripts/intro.gd" id="1_gn0q4"]
-[ext_resource type="VideoStream" uid="uid://cowahtl476wrt" path="res://assets/ViagemDeNoe/intro.ogv" id="2_ulf24"]
+[ext_resource type="Script" path="res://scripts/intro.gd" id="1_gn0q4"]
+[ext_resource type="VideoStream" path="res://assets/ViagemDeNoe/intro.ogv" id="2_ulf24"]
 [ext_resource type="AudioStream" uid="uid://c8oiw5p4x6uo2" path="res://sounds/cair.mp3" id="3_4bx60"]
 
 [node name="Intro" type="Node2D"]

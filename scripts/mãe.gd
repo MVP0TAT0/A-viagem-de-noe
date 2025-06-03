@@ -1,7 +1,6 @@
 extends Area2D
 
 var player_inside := false
-@onready var prompt = get_tree().get_current_scene().get_node("Player/Noé/TextureRect")
 @onready var audio_player: AudioStreamPlayer = $"../../FadeRect/AudioPlayer"
 @onready var anim_mae: AnimatedSprite2D = get_parent() # ou $".."
 
@@ -20,14 +19,14 @@ func _ready():
 func _on_area_entered(area):
 	if area.name == "InteractionArea":
 		player_inside = true
-		if prompt:
-			prompt.visible = true
+		if GameState.get_prompt():
+			GameState.get_prompt().visible = true
 
 func _on_area_exited(area):
 	if area.name == "InteractionArea":
 		player_inside = false
-		if prompt:
-			prompt.visible = false
+		if GameState.get_prompt():
+			GameState.get_prompt().visible = false
 
 func _process(_delta):
 	if Input.is_action_just_pressed("interact") and player_inside and not GameState.interaction_locked and GameState.current_dialog == null:

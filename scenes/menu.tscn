@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://b7mmgxtwgqwnx"]
+[gd_scene load_steps=5 format=3 uid="uid://b7mmgxtwgqwnx"]
 
-[ext_resource type="Script" uid="uid://dhkc8llljgtl0" path="res://scripts/menu.gd" id="1_yqeox"]
+[ext_resource type="Script" path="res://scripts/menu.gd" id="1_yqeox"]
 [ext_resource type="AudioStream" uid="uid://bcx2hduye6kl1" path="res://sounds/fins e menu/menu.mp3" id="2_vjb58"]
 [ext_resource type="Texture2D" uid="uid://dmxkfqfeykavh" path="res://assets/ViagemDeNoe/Menu.png" id="2_wmwbt"]
+[ext_resource type="FontFile" uid="uid://cimm5ciwugig4" path="res://fonts/Lapture_Bold.ttf" id="3_w5o01"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -56,6 +57,7 @@ theme_override_constants/shadow_offset_x = 3
 theme_override_constants/shadow_offset_y = 1
 theme_override_constants/outline_size = 1
 theme_override_constants/shadow_outline_size = 2
+theme_override_fonts/font = ExtResource("3_w5o01")
 theme_override_font_sizes/font_size = 80
 text = ">"
 
@@ -70,6 +72,7 @@ theme_override_constants/shadow_offset_x = 3
 theme_override_constants/shadow_offset_y = 1
 theme_override_constants/outline_size = 1
 theme_override_constants/shadow_outline_size = 2
+theme_override_fonts/font = ExtResource("3_w5o01")
 theme_override_font_sizes/font_size = 80
 text = "Jogar"
 
@@ -85,6 +88,7 @@ theme_override_constants/shadow_offset_x = 3
 theme_override_constants/shadow_offset_y = 1
 theme_override_constants/outline_size = 1
 theme_override_constants/shadow_outline_size = 2
+theme_override_fonts/font = ExtResource("3_w5o01")
 theme_override_font_sizes/font_size = 80
 text = ">"
 
@@ -99,6 +103,7 @@ theme_override_constants/shadow_offset_x = 3
 theme_override_constants/shadow_offset_y = 1
 theme_override_constants/outline_size = 1
 theme_override_constants/shadow_outline_size = 2
+theme_override_fonts/font = ExtResource("3_w5o01")
 theme_override_font_sizes/font_size = 80
 text = "Sair"
 
