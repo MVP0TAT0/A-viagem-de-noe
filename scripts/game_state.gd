@@ -111,3 +111,5 @@ func reset_game_state():
 	intro_bedroom_dialog_shown = false
 	
 	puzzle_joias_completo = false
+	
+	return_position = Vector2.ZERO

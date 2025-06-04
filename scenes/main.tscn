@@ -262,12 +262,12 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
-[node name="InteractionSoundPlayer" type="AudioStreamPlayer" parent="."]
+[node name="bgm" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("13_trceg")
 autoplay = true
-parameters/looping = false
 
-[node name="AudioPlayer" type="AudioStreamPlayer" parent="."]
+[node name="InteractionSoundPlayer" type="AudioStreamPlayer" parent="."]
+autoplay = true
 
 [node name="IntIntro" type="Area2D" parent="."]
 position = Vector2(153, 0)

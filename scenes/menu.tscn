@@ -119,6 +119,7 @@ vertical_alignment = 1
 
 [node name="Seta" type="Label" parent="."]
 modulate = Color(1.2, 1.2, 1.2, 1)
+layout_mode = 0
 offset_left = 632.0
 offset_top = 567.0
 offset_right = 678.0

@@ -80,6 +80,7 @@ shape = SubResource("RectangleShape2D_u423m")
 
 [node name="BackgroundMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_v88nx")
+volume_db = -7.429
 autoplay = true
 
 [node name="coluna_1" type="Sprite2D" parent="."]
