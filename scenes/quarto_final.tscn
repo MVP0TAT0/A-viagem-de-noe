@@ -1,4 +1,4 @@
-[gd_scene load_steps=57 format=3 uid="uid://fb4dvlsk0shv"]
+[gd_scene load_steps=58 format=3 uid="uid://fb4dvlsk0shv"]
 
 [ext_resource type="Texture2D" uid="uid://buj8vpygrphbq" path="res://assets/ViagemDeNoe/quarto_final.png" id="1_sywcx"]
 [ext_resource type="Script" path="res://scripts/quarto_final.gd" id="1_t7wak"]
@@ -44,6 +44,7 @@
 [ext_resource type="Texture2D" uid="uid://cquwg3ngs17hm" path="res://assets/ViagemDeNoe/animation/noe_walk/walk_8.png" id="21_1tu6d"]
 [ext_resource type="Texture2D" uid="uid://bc0h87c1xpg5g" path="res://assets/ViagemDeNoe/animation/noe_walk/walk_9.png" id="22_8pavu"]
 [ext_resource type="Texture2D" uid="uid://brlqtnt0s37j8" path="res://assets/ViagemDeNoe/reflexo_neutral.png" id="23_5mnxx"]
+[ext_resource type="PackedScene" uid="uid://c82lsht2u8sbd" path="res://scenes/puzzle.tscn" id="29_vqu8i"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ylwf0"]
 size = Vector2(5067.48, 1791.16)
@@ -306,6 +307,11 @@ limit_left = 0
 limit_right = 2480
 editor_draw_limits = true
 
+[node name="PuzzleContainer" type="Node2D" parent="."]
+unique_name_in_owner = true
+
+[node name="Puzzle" parent="PuzzleContainer" instance=ExtResource("29_vqu8i")]
+
 [node name="FadeRect" type="ColorRect" parent="."]
 modulate = Color(1, 1, 1, 0)
 anchors_preset = 15
@@ -321,7 +327,6 @@ color = Color(0, 0, 0, 1)
 stream = ExtResource("16_goxlp")
 
 [node name="DarkOverlay" type="ColorRect" parent="."]
-visible = false
 z_index = 5
 custom_minimum_size = Vector2(2000, 2000)
 anchors_preset = 15
@@ -333,12 +338,14 @@ offset_right = 2536.0
 offset_bottom = 1552.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(1.00723, 0.981799)
 size_flags_horizontal = 3
 size_flags_vertical = 3
 color = Color(0, 0, 0, 0.298039)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("16_ft3yi")
+volume_db = -5.306
 autoplay = true
 parameters/looping = true
 

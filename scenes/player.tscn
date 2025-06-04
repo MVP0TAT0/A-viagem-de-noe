@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://b81xyootrnoab"]
+[gd_scene load_steps=6 format=3 uid="uid://b81xyootrnoab"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_g2els"]
 [ext_resource type="SpriteFrames" uid="uid://d1om381a5wbjt" path="res://assets/ViagemDeNoe/animation/player.tres" id="3_n7hoo"]
 [ext_resource type="FontFile" uid="uid://cimm5ciwugig4" path="res://fonts/Lapture_Bold.ttf" id="4_364pt"]
+[ext_resource type="AudioStream" uid="uid://3rcsnv32xqmr" path="res://sounds/passos.mp3" id="4_dqkch"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u8vuu"]
 size = Vector2(19.3646, 120.121)
@@ -14,7 +15,7 @@ script = ExtResource("1_g2els")
 position = Vector2(-6, -8)
 scale = Vector2(0.785, 0.785)
 sprite_frames = ExtResource("3_n7hoo")
-animation = &"idle"
+animation = &"walk"
 autoplay = "idle"
 
 [node name="Label" type="Label" parent="Noé"]
@@ -38,3 +39,12 @@ collision_layer = 2
 position = Vector2(-6, -10.5)
 scale = Vector2(3.305, 3.305)
 shape = SubResource("RectangleShape2D_u8vuu")
+
+[node name="StepTimer" type="Timer" parent="."]
+wait_time = 0.579
+
+[node name="Footsteps" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_dqkch")
+volume_db = 10.948
+
+[connection signal="timeout" from="StepTimer" to="." method="_on_step_timer_timeout"]

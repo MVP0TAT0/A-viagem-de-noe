@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://c82lsht2u8sbd"]
+[gd_scene load_steps=27 format=3 uid="uid://c82lsht2u8sbd"]
 
 [ext_resource type="Script" path="res://scripts/puzzle.gd" id="1_uoura"]
 [ext_resource type="Texture2D" uid="uid://cq7kvx1q0nfmy" path="res://assets/ViagemDeNoe/caixa_joias.png" id="2_j4q4i"]
@@ -22,6 +22,10 @@
 [ext_resource type="Texture2D" uid="uid://jkec4yqwqq8v" path="res://assets/ViagemDeNoe/joias/joia18.png" id="20_yya5h"]
 [ext_resource type="Texture2D" uid="uid://bptnh5ck8p5w1" path="res://assets/ViagemDeNoe/joias/joia19.png" id="21_x048y"]
 [ext_resource type="Texture2D" uid="uid://sa60vwiu33nb" path="res://assets/ViagemDeNoe/joias/joia20.png" id="22_fduym"]
+[ext_resource type="AudioStream" uid="uid://rv1as1hflgwc" path="res://sounds/perulas.mp3" id="23_dn2x8"]
+[ext_resource type="AudioStream" uid="uid://bgynrm15q3osc" path="res://sounds/pin.mp3" id="24_ri802"]
+[ext_resource type="AudioStream" uid="uid://drcu101e0leqy" path="res://sounds/brincos.mp3" id="25_iy5mn"]
+[ext_resource type="AudioStream" uid="uid://w3xl3k1j31id" path="res://sounds/pulseira.mp3" id="26_4jgd0"]
 
 [node name="Puzzle" type="Node2D"]
 script = ExtResource("1_uoura")
@@ -170,3 +174,15 @@ position = Vector2(255, 258)
 
 [node name="Lugar20" type="Node2D" parent="Caixa"]
 position = Vector2(392, 258)
+
+[node name="SomColar" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("23_dn2x8")
+
+[node name="SomPin" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("24_ri802")
+
+[node name="SomBrincos" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("25_iy5mn")
+
+[node name="SomPulseira" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("26_4jgd0")

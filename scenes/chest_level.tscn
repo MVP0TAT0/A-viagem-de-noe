@@ -153,5 +153,6 @@ color = Color(0, 0, 0, 1)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_bhali")
+volume_db = -3.715
 autoplay = true
 parameters/looping = true
