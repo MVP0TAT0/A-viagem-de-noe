@@ -26,4 +26,4 @@ func _on_dialog_finished(_choice = 0):
 		GameState.reset_game_state()
 		get_tree().change_scene_to_file("res://scenes/main.tscn")
 	else:
-		get_tree().quit()
+		get_tree().change_scene_to_file("res://scenes/credits.tscn")
