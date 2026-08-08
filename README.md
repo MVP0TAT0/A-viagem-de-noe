@@ -1,5 +1,8 @@
 # 🌊 A Viagem de Noé
 
+> **Design de Jogos | Mestrado em Design e Multimédia (2024/2025)**  
+> *Faculdade de Ciências e Tecnologia da Universidade de Coimbra*
+
 ![Godot Engine](https://img.shields.io/badge/Criado_com-Godot_Engine-478cbf?style=for-the-badge&logo=godot-engine&logoColor=white)
 
 ## 📖 Sobre o Jogo
@@ -19,7 +22,7 @@ Clica na imagem abaixo para seres redirecionado para o nosso trailer oficial no 
 [![Trailer de A Viagem de Noé](https://i.ytimg.com/vi/sTVrVESPDTw/maxresdefault.jpg)](https://www.youtube.com/watch?v=sTVrVESPDTw)
 
 ## 🚀 Como Jogar
-1. Acede à secção de [Releases](https://github.com/MVP0TAT0/A-viagem-de-noe/releases/tag/v1.0.1) do repositório (Só funciona em Windows).
+1. Acede à secção de [Releases](https://github.com/MVP0TAT0/A-viagem-de-noe/releases/tag/v1.0.1) do repositório (Windows <img src="https://img.icons8.com/?size=100&id=M9BRw0RJZXKi&format=png&color=000000" width="2%">).
 2. Extrai os ficheiros e executa o jogo. Diverte-te!
 
 ## ✨ Créditos
