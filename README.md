@@ -17,9 +17,8 @@ Ao longo desta aventura imersiva, o peso das memórias e os conflitos psicológi
 * 🎧 **Áudio Imersivo:** Banda sonora e efeitos sonoros concebidos para amplificar a carga emocional de cada cena.
 
 ## 🎬 Trailer
-Clica na imagem abaixo para seres redirecionado para o nosso trailer oficial no YouTube:
 
-[![Trailer de A Viagem de Noé](https://i.ytimg.com/vi/sTVrVESPDTw/maxresdefault.jpg)](https://www.youtube.com/watch?v=sTVrVESPDTw)
+https://github.com/user-attachments/assets/8d20172a-4d4a-4232-b2e4-4fd56701ad6b
 
 ## 🚀 Como Jogar
 1. Acede à secção de [Releases](https://github.com/MVP0TAT0/A-viagem-de-noe/releases/tag/v1.0.1) do repositório (Windows <img src="https://img.icons8.com/?size=100&id=M9BRw0RJZXKi&format=png&color=000000" width="2%">).
